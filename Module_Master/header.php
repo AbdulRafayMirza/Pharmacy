@@ -56,9 +56,9 @@
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-bar-chart"></i>
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
-                                <li><a href="Module_Master/company.php"><i class="ti-desktop"></i>Company</a></li>
-                                <li><a href="">
-                                        <iclass="ti-id-badge"></i>Warehouses
+                                <li><a href="company.php"><i class="ti-desktop"></i>Company</a></li>
+                                <li><a href="warehouses.php">
+                                        <i class="ti-id-badge"></i>Warehouses
                                     </a></li>
                                 <li><a href="BankSetup.php"><i class="ti-receipt"></i>Bank Setup</a>
                                 </li>
