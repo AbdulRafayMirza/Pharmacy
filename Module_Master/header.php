@@ -60,7 +60,7 @@
                                 <li><a href="">
                                         <iclass="ti-id-badge"></i>Warehouses
                                     </a></li>
-                                <li><a href=""><i class="ti-receipt"></i>Bank Setup</a>
+                                <li><a href="BankSetup.php"><i class="ti-receipt"></i>Bank Setup</a>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
