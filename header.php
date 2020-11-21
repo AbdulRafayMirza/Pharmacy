@@ -1,6 +1,7 @@
     <!-- Top Bar Start -->
 <div class="topbar">
         <!-- Navbar -->
+        
         <nav class="topbar-main">
             <!-- LOGO -->
             <div class="topbar-left"><a href="projects-index.html" class="logo"><span><img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"> </span><span><img src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg"></span></a></div>
