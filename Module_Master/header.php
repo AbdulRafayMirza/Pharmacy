@@ -8,15 +8,15 @@
         <nav class="topbar-main">
             <!-- LOGO -->
             <div class="topbar-left"><a href="projects-index.html" class="logo"><span><img
-                            src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm"> </span><span><img
-                            src="assets/images/logo-dark.png" alt="logo-large" class="logo-lg"></span></a></div>
+                            src="../assets/images/logo-sm.png" alt="logo-small" class="logo-sm"> </span><span><img
+                            src="../assets/images/logo-dark.png" alt="logo-large" class="logo-lg"></span></a></div>
             <!--topbar-left-->
             <!--end logo-->
             <ul class="list-unstyled topbar-nav float-right mb-0">
                 <li class="dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-light nav-user pr-0" data-toggle="dropdown"
                         href="#" role="button" aria-haspopup="false" aria-expanded="false"><img
-                            src="assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle"> <span
+                            src="../assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle"> <span
                             class="ml-1 nav-user-name hidden-sm">Amelia <i class="mdi mdi-chevron-down"></i></span></a>
                     <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
                                 class="dripicons-user text-muted mr-2"></i> Profile</a> <a class="dropdown-item"
