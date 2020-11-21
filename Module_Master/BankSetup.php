@@ -17,12 +17,17 @@
     <link href="../assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+    label {
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body>
 
     <?php include_once 'header.php'; ?>
-    
+
     <div class="page-wrapper">
         <!-- Page Content-->
         <div class="page-content">
@@ -47,14 +52,114 @@
                     <!--end col-->
                 </div>
                 <!--end row-->
-                <!-- end page title end breadcrumb -->
-                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">ID</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" type="number" id="Id">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Name</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" type="text" id="name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-2 col-form-label text-right">Address</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group"><textarea class="form-control" rows="5"
+                                                        style="resize:none" id="textarea-input-address"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Contact</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" type="text" id="contact">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Account Number</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" type="text" id="accountno">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2">New</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2"></button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2">Exit</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2">Exit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>ID:</label>
+                            <input type="number" name="Id" id="Id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" name="bankname" id="bankname" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <input type="text" name="bankaddress" id="bankaddress" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Contact:</label>
+                            <input type="text" name="contact" id="contact" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Account Number:</label>
+                            <input type="text" name="accountno" id="accountno" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info">New</button>
+                            <button type="button" class="btn btn-success">Save</button>
+                            <button type="button" class="btn btn-primary">Update</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- container -->
         </div>
         <!-- end page content -->
         <footer class="footer text-center text-sm-left">
-            <div class="boxed-footer">&copy; 2020 Pharmacy  <span class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/" target="_blank">Matz Solutions Pvt Ltd</a></span></div>
+            <div class="boxed-footer">&copy; 2020 Pharmacy <span
+                    class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/"
+                        target="_blank">Matz Solutions Pvt Ltd</a></span></div>
         </footer>
         <!--end footer-->
     </div>
