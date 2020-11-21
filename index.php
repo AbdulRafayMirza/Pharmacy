@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,9 +21,7 @@
 
 <body>
 
-    <?php
-        include_once('header.php');
-    ?>
+    <?php include_once 'header.php'; ?>
     
     <div class="page-wrapper">
         <!-- Page Content-->
