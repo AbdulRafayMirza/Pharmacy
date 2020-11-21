@@ -40,7 +40,7 @@
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title"><b><u>Bank Setup</u></b></h4>
+                            <h4 class="page-title"><u><b>Bank Setup</b></u></h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
