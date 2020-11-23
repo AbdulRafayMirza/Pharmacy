@@ -86,7 +86,7 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Employees</a></li>
+                                        <li><a href="Module_Master/employees.php">Employees</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
