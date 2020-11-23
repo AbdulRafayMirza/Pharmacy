@@ -57,10 +57,10 @@
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
                                 <li><a href="Module_Master/company.php"><i class="ti-desktop"></i>Company</a></li>
-                                <li><a href="">
-                                        <iclass="ti-id-badge"></i>Warehouses
+                                <li><a href="Module_Master/warehouses.php">
+                                        <i class="ti-id-badge"></i>Warehouses
                                     </a></li>
-                                <li><a href=""><i class="ti-receipt"></i>Bank Setup</a>
+                                <li><a href="Module_Master/BankSetup.php"><i class="ti-receipt"></i>Bank Setup</a>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
