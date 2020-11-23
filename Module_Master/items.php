@@ -38,12 +38,12 @@
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Master Module</a></li>
-                                    <li class="breadcrumb-item active">Vendor</li>
+                                    <li class="breadcrumb-item active">Items</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Vendor</h4>
+                            <h4 class="page-title">Items</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -56,36 +56,61 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-vendor-id" class="col-sm-2 col-form-label text-right">Vendor ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-id" readonly></div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group row"><label for="text-input-item-id" class="col-sm-4 col-form-label text-right">Item ID</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-id" readonly></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-vendor-name" class="col-sm-2 col-form-label text-right">Vendor Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-name"></div>
+                                        <div class="form-group row"><label for="text-input-item-batch-number" class="col-sm-4 col-form-label text-right">Batch Number</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-batch-number"></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-vendor-responsible" class="col-sm-2 col-form-label text-right">Responsible</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-responsible"></div>
+                                        <div class="form-group row"><label for="text-input-item-name" class="col-sm-4 col-form-label text-right">Item Name</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-name"></div>
                                         </div>
-                                        <div class="form-group row"><label for="tel-input-phone"
-                                                class="col-sm-2 col-form-label text-right">Phone</label>
-                                            <div class="col-sm-10"><input class="form-control" type="tel"
-                                                    id="tel-input-phone"></div>
+                                        <div class="form-group row"><label for="text-input-item-short-name" class="col-sm-4 col-form-label text-right">Short Name</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-short-name"></div>
                                         </div>
-                                        <div class="form-group row"><label for="textarea-input-address" class="col-sm-2 col-form-label text-right">Address</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group"><textarea class="form-control" rows="5" style="resize:none" id="textarea-input-address"></textarea></div>
-                                            </div>
+                                        <div class="form-group row"><label for="select-item-packing-type" class="col-sm-4 col-form-label text-right">Packing Type</label>
+                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-packing-type"><option>Strip</option></select></div>
+                                        </div>
+                                        <div class="form-group row"><label for="select-item-category" class="col-sm-4 col-form-label text-right">Category</label>
+                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-category"><option></option></select></div>
+                                        </div>
+                                        <div class="form-group row"><label for="select-item-company" class="col-sm-4 col-form-label text-right">Company</label>
+                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-company"><option>Abbott</option></select></div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-vendor-email" class="col-sm-2 col-form-label text-right">Email</label>
-                                            <div class="col-sm-10"><input class="form-control" type="email" id="text-input-vendor-email"></div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group row"><label for="text-input-item-gst-percent" class="col-sm-4 col-form-label text-right">GST (%)</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-gst-percent"></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-vendor-reg-no" class="col-sm-2 col-form-label text-right">Reg No</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-reg-no"></div>
+                                        <div class="form-group row"><label for="text-input-item-selling-price" class="col-sm-4 col-form-label text-right">Selling Price</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-selling-price"></div>
                                         </div>
-                                        <div class="form-group row"><label for="select-vendor-type" class="col-sm-2 col-form-label text-right">Vendor Type<small>(For GST Only)</small></label>
-                                            <div class="col-sm-10"><select class="form-control" type="text" id="select-vendor-type"><option>Local</option></select></div>
+                                        <div class="form-group row"><label for="text-input-alarm-quantity" class="col-sm-4 col-form-label text-right">Alarm Quantity</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-alarm-quantity"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-item-units-in-pack" class="col-sm-4 col-form-label text-right">Units in Pack</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-units-in-pack"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-item-barcode" class="col-sm-4 col-form-label text-right">Barcode</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-barcode"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group row"><label for="text-input-item-gst-percent" class="col-sm-4 col-form-label text-right">Trade Price</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-gst-percent"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-item-selling-price" class="col-sm-4 col-form-label text-right">Selling %</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-selling-price"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-alarm-quantity" class="col-sm-4 col-form-label text-right">Packs in Carton</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-alarm-quantity"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-item-units-in-pack" class="col-sm-4 col-form-label text-right">RFID Tag</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-units-in-pack"></div>
+                                        </div>
+                                        <div class="form-group row"><label for="text-input-item-barcode" class="col-sm-4 col-form-label text-right">HSN</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-barcode"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -110,18 +135,28 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 table-responsive">
 
                                         <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 155.889px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Vendor Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240.889px;" aria-label="Position: activate to sort column ascending">Phone</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 113.889px;" aria-label="Office: activate to sort column ascending">Email</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Address</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Contract Person</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Vendor Type</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Reg No</th>
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 155.889px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Item ID</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240.889px;" aria-label="Position: activate to sort column ascending">Batch Number</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 113.889px;" aria-label="Office: activate to sort column ascending">Item Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Short Name</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Company</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Packing Type</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Category</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Trade Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Retail Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Alarm Quantity</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Unit in Pack</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Packs in Carton</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Barcode Number</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">RFID Tag</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Selling Percent</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">GST Rate</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">HSN</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
