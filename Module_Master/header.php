@@ -101,7 +101,7 @@
                             <!--end submenu-->
                         </li>
                         <!--end has-submenu-->
-                        
+
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-server"></i>
                                 <span>Transaction Module</span></a>
                             <ul class="submenu submenu-tab">
