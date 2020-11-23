@@ -74,7 +74,7 @@
                                                 class="col-sm-2 col-form-label text-right">Address</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group"><textarea class="form-control" rows="5"
-                                                        style="resize:none" id="textarea-input-address"></textarea>
+                                                        style="resize:none" id="address"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label text-right">Account Number</label>
                                             <div class="col-sm-10">
-                                                <input class="form-control" type="text" id="accountno">
+                                                <input class="form-control" type="text" id="accountnumber">
                                             </div>
                                         </div>
                                     </div>

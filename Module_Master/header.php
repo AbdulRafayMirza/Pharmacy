@@ -57,20 +57,15 @@
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
                                 <li><a href="company.php"><i class="ti-desktop"></i>Company</a></li>
-                                <li><a href="warehouses.php">
-                                        <i class="ti-id-badge"></i>Warehouses
-                                    </a></li>
-                                <li><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a>
-                                </li>
-                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
-                                        Customers</a>
+                                <li><a href="warehouses.php"><i class="ti-id-badge"></i>Warehouses</a></li>
+                                <li><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a></li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And Customers</a>
                                     <ul class="submenu">
                                         <li><a href="">Vendors</a></li>
                                         <li><a href="">Customers</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
-                                        Information</a>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product Information</a>
                                     <ul class="submenu">
                                         <li><a href="">Item Company</a></li>
                                         <li><a href="">Items Packing Type</a></li>

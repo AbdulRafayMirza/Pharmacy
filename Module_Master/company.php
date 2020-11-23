@@ -54,50 +54,50 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group row">
-                                            <label for="text-input-company-name"
-                                                class="col-sm-2 col-form-label text-right">Company Name</label>
+                                            <label class="col-sm-2 col-form-label text-right">Company Name</label>
                                             <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="text-input-company-name"></div>
+                                                    id="companyname">
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="tel-input-phone"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Phone</label>
-                                            <div class="col-sm-10"><input class="form-control" type="tel"
-                                                    id="tel-input-phone"></div>
+                                            <div class="col-sm-10"><input class="form-control" type="tel" id="phone">
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="number-input-gstin"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">GSTIN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number"
-                                                    id="number-input-gstin"></div>
+                                            <div class="col-sm-10"><input class="form-control" type="number" id="gstin">
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="textarea-input-address"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Address</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group"><textarea class="form-control" rows="5"
-                                                        style="resize:none" id="textarea-input-address"></textarea>
+                                                        style="resize:none" id="address"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-company-owner"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Company Owner</label>
                                             <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="text-input-company-owner"></div>
+                                                    id="companyowner"></div>
                                         </div>
-                                        <div class="form-group row"><label for="email-input-email"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Email</label>
-                                            <div class="col-sm-10"><input class="form-control" type="email"
-                                                    id="email-input-email"></div>
+                                            <div class="col-sm-10"><input class="form-control" type="email" id="email">
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="number-input-pan"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">PAN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number"
-                                                    id="number-input-pan"></div>
+                                            <div class="col-sm-10"><input class="form-control" type="number" id="pan">
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-remarks"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Remarks</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="text-input-remarks"></div>
+                                            <div class="col-sm-10"><input class="form-control" type="text" id="remarks">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
