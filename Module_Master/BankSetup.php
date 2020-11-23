@@ -97,10 +97,10 @@
 
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2">New</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2"></button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2">Exit</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2">Exit</button>
+                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
+                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-edit"></i>&emsp;Update</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-save"></i>&emsp;Save</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
                                     </div>
                                 </div>
                             </div>
@@ -109,48 +109,6 @@
                         <!--end card-->
                     </div>
                     <!--end col-->
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>ID:</label>
-                            <input type="number" name="Id" id="Id" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Name:</label>
-                            <input type="text" name="bankname" id="bankname" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Address:</label>
-                            <input type="text" name="bankaddress" id="bankaddress" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Contact:</label>
-                            <input type="text" name="contact" id="contact" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Account Number:</label>
-                            <input type="text" name="accountno" id="accountno" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <button type="button" class="btn btn-info">New</button>
-                            <button type="button" class="btn btn-success">Save</button>
-                            <button type="button" class="btn btn-primary">Update</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- container -->
