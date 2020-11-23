@@ -72,8 +72,8 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Item Company</a></li>
-                                        <li><a href="">Items Packing Type</a></li>
+                                        <li><a href="itemCompany.php">Item Company</a></li>
+                                        <li><a href="packingType.php">Items Packing Type</a></li>
                                         <li><a href="">Items</a></li>
                                     </ul>
                                 </li>
