@@ -38,12 +38,12 @@
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Master Module</a></li>
-                                    <li class="breadcrumb-item active">Currencies</li>
+                                    <li class="breadcrumb-item active">Currency Rates</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Currencies</h4>
+                            <h4 class="page-title">Currency Rates</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
