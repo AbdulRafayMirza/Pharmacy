@@ -65,8 +65,8 @@
                                 <li class="has-submenu"><a href="javascript:void(0);"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
                                     <ul class="submenu">
-                                        <li><a href="">Vendors</a></li>
-                                        <li><a href="">Customers</a></li>
+                                        <li><a href="vendors.php">Vendors</a></li>
+                                        <li><a href="customers.php">Customers</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
