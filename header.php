@@ -80,7 +80,7 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
                                         <li><a href="Module_Master/currencies.php">Currency</a></li>
-                                        <li><a href="">Currency Rate</a></li>
+                                        <li><a href="Module_Master/currencyRates.php">Currency Rate</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
