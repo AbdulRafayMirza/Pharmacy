@@ -74,12 +74,12 @@
                                     <ul class="submenu">
                                         <li><a href="Module_Master/itemCompany.php">Item Company</a></li>
                                         <li><a href="Module_Master/packingType.php">Items Packing Type</a></li>
-                                        <li><a href="">Items</a></li>
+                                        <li><a href="Module_Master/items.php">Items</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
-                                        <li><a href="">Currency</a></li>
+                                        <li><a href="Module_Master/currencies.php">Currency</a></li>
                                         <li><a href="">Currency Rate</a></li>
                                     </ul>
                                 </li>
