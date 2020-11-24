@@ -57,19 +57,19 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-customer-id" class="col-sm-2 col-form-label text-right">Customer ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-customer-id" readonly></div>
+                                        <div class="form-group row"><label class="col-sm-2 col-form-label text-right">Customer ID</label>
+                                            <div class="col-sm-10"><input class="form-control" type="text" id="customerid" readonly></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-customer-name" class="col-sm-2 col-form-label text-right">Customer Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-customer-name"></div>
+                                        <div class="form-group row"><label class="col-sm-2 col-form-label text-right">Customer Name</label>
+                                            <div class="col-sm-10"><input class="form-control" type="text" id="customer_name"></div>
                                         </div>
-                                        <div class="form-group row"><label for="select-customer-category" class="col-sm-2 col-form-label text-right">Category</label>
-                                            <div class="col-sm-10"><select class="form-control" type="text" id="select-customer-category"><option>COMMON</option></select></div>
+                                        <div class="form-group row"><label class="col-sm-2 col-form-label text-right">Category</label>
+                                            <div class="col-sm-10"><select class="form-control" type="text" id="customer_category"><option>COMMON</option></select></div>
                                         </div>
-                                        <div class="form-group row"><label for="select-customer-type" class="col-sm-2 col-form-label text-right">Customer Type<small>(For GST Only)</small></label>
-                                            <div class="col-sm-10"><select class="form-control" type="text" id="select-customer-type"><option>Local</option></select></div>
+                                        <div class="form-group row"><label class="col-sm-2 col-form-label text-right">Customer Type<small>(For GST Only)</small></label>
+                                            <div class="col-sm-10"><select class="form-control" type="text" id="customer_type"><option>Local</option></select></div>
                                         </div>
-                                        <div class="form-group row"><label for="tel-input-phone"
+                                        <div class="form-group row"><label
                                                 class="col-sm-2 col-form-label text-right">Phone</label>
                                             <div class="col-sm-10"><input class="form-control" type="tel"
                                                     id="tel-input-phone"></div>

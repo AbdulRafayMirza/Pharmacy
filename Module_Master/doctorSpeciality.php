@@ -38,12 +38,12 @@
                             <div class="float-right">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Master Module</a></li>
-                                    <li class="breadcrumb-item active">Currencies</li>
+                                    <li class="breadcrumb-item active">Extra</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Currencies</h4>
+                            <h4 class="page-title">Doctor Speciality</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -58,34 +58,29 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">ID</label>
+                                                class="col-sm-2 col-form-label text-right">Speciality ID</label>
                                             <div class="col-sm-10"><input class="form-control" type="text" id="id"
                                                     readonly></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Symbol</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="symbol">
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Currency</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="currency"></div>
+                                                class="col-sm-2 col-form-label text-right">Description</label>
+                                            <div class="col-sm-10"><input class="form-control" type="text" id="description">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2"><i
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                                 class="fas fa-file"></i>&emsp;New</button>
                                         <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                                 class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                                 class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                                 class="fas fa-trash"></i>&emsp;Delete</button>
                                     </div>
                                 </div>
@@ -108,8 +103,7 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th style="width: 155.889px;">ID</th>
-                                                    <th style="width: 240.889px;">Currency Name</th>
-                                                    <th style="width: 240.889px;">Symbol</th>
+                                                    <th style="width: 240.889px;">Description</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

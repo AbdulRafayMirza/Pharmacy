@@ -69,7 +69,8 @@
                                         <li><a href="customers.php">Customers</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product Information</a>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
+                                        Information</a>
                                     <ul class="submenu">
                                         <li><a href="itemCompany.php">Item Company</a></li>
                                         <li><a href="packingType.php">Items Packing Type</a></li>
@@ -90,9 +91,9 @@
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
                                     <ul class="submenu">
-                                        <li><a href="">Doctor Speciality</a></li>
-                                        <li><a href="">Doctor Profile</a></li>
-                                        <li><a href="">Other Companies</a></li>
+                                        <li><a href="doctorSpeciality.php">Doctor Speciality</a></li>
+                                        <li><a href="doctorProfile.php">Doctor Profile</a></li>
+                                        <li><a href="othercompanies.php">Other Companies</a></li>
                                     </ul>
                                 </li>
 

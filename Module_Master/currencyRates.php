@@ -57,22 +57,22 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-currency-id" class="col-sm-4 col-form-label text-right">ID</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-currency-id" readonly></div>
+                                        <div class="form-group row"><label class="col-sm-4 col-form-label text-right">ID</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="id" readonly></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-currency-calc-method" class="col-sm-4 col-form-label text-right">Calc Method</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-currency-calc-method"></div>
+                                        <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Calc Method</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="calc_method"></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-currency-rate" class="col-sm-4 col-form-label text-right">Rate</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-currency-rate"></div>
+                                        <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Rate</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="rate"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="form-group row"><label for="select-currency" class="col-sm-4 col-form-label text-right">Currency</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-currency"><option>PKR</option></select></div>
+                                        <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Currency</label>
+                                            <div class="col-sm-8"><select class="form-control" type="text" id="selectcurrency"><option>PKR</option></select></div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-currency-date" class="col-sm-4 col-form-label text-right">Date</label>
-                                            <div class="col-sm-8"><input class="form-control" type="date" readonly id="text-input-currency-date" value="<?php echo date('Y-m-d'); ?>"></div>
+                                        <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Date</label>
+                                            <div class="col-sm-8"><input class="form-control" type="date" readonly id="date" value="<?php echo date('Y-m-d'); ?>"></div>
                                         </div>
                                     </div>
                                 </div>
