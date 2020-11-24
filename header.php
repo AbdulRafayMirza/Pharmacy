@@ -65,28 +65,28 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
                                     <ul class="submenu">
-                                        <li><a href="">Vendors</a></li>
-                                        <li><a href="">Customers</a></li>
+                                        <li><a href="Module_Master/vendors.php">Vendors</a></li>
+                                        <li><a href="Module_Master/customers.php">Customers</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Item Company</a></li>
-                                        <li><a href="">Items Packing Type</a></li>
-                                        <li><a href="">Items</a></li>
+                                        <li><a href="Module_Master/itemCompany.php">Item Company</a></li>
+                                        <li><a href="Module_Master/packingType.php">Items Packing Type</a></li>
+                                        <li><a href="Module_Master/items.php">Items</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
-                                        <li><a href="">Currency</a></li>
-                                        <li><a href="">Currency Rate</a></li>
+                                        <li><a href="Module_Master/currencies.php">Currency</a></li>
+                                        <li><a href="Module_Master/currencyRates.php">Currency Rate</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Employees</a></li>
+                                        <li><a href="Module_Master/employees.php">Employees</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
