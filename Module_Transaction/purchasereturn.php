@@ -23,7 +23,7 @@
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
     label{
-     font-weight: bold;
+        font-weight: bold;
     }
     </style>
 </head>
@@ -44,12 +44,12 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Transaction Module</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Purchase Invoice</li>
+                                    <li class="breadcrumb-item active">Purchase Return</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Purchase Invoice</h4>
+                            <h4 class="page-title">Purchase Return</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -65,146 +65,81 @@
 
                                     <div class="col-lg-4">
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Invoice ID</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="id"
+                                                class="col-sm-4 col-form-label text-right">Return No :</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="return_no"
                                                     readonly></div>
                                         </div>
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Invoice Type</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text"
-                                                    id="invoicetype"></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Invoice Type</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text"
-                                                    id="invoicetype">
-                                                    <option>Original</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Vendor</label>
+                                                class="col-sm-4 col-form-label text-right">Vendor :</label>
                                             <div class="col-sm-8"><select class="form-control" type="text" id="vendor">
                                                     <option>Jai Medicos</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Currency</label>
+                                                class="col-sm-4 col-form-label text-right">Return Date :</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="date" id="return_date">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Remarks :</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="remarks">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Currency :</label>
                                             <div class="col-sm-8"><select class="form-control" type="text"
                                                     id="currency">
                                                     <option>PKR</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Payment Mode</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text"
-                                                    id="paymentmode">
-                                                    <option>Cash Drawer</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Bank</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" disabled
-                                                    id="bank">
-                                                    <option>Cash Drawer</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Available Credit</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text"
-                                                    id="availablecredit" readonly></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Warehouse</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" id="bank">
-                                                    <option>Main Shop</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Date</label>
-                                            <div class="col-sm-8"><input class="form-control" type="date" id="date">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Vendor Type</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text"
-                                                    id="vendortype" readonly></div>
-                                        </div>
                                     </div>
 
 
-                                    <div class="col-lg-4">
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Item Name</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text"
+                                    <div class="col-lg-8 pt-3" style="border: 3px solid #1c1c1c; height: 270px;">
+                                        <div class="form-group row"><label class="col-sm-2 col-form-label">Item
+                                                Name :</label>
+                                            <div class="col-sm-10"><select class="form-control" type="text"
                                                     id="itemname">
                                                     <option>Acylex 200mg</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Rate</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="rate">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Quantity</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="quantity">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Batch No</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="batchno">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Barcode</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="barcode">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Expiry Date</label>
-                                            <div class="col-sm-8"><input class="form-control" type="date"
-                                                    id="expirydate"></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">RFID Tag</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="rfid_tag"
-                                                    value="0" disabled></div>
+                                        <div class="form-group row">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Larry</td>
+                                                        <td>the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-
-
-                                    <div class="col-lg-4">
-                                        <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label text-right">
-                                                <input type="checkbox" id="bonusqty_checkbox"> Bonus Quantity</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text"
-                                                    id="bonusquantity" value="0" disabled></div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label text-right">
-                                            <input type="checkbox" id="discount_checkbox"> Discount %</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="discount"
-                                                    value="0" disabled></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">GST %</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="discount"
-                                                    value="0" disabled></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Total Amount (Item)</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="discount"
-                                                    value="0" disabled></div>
-                                        </div>
-                                    </div>
-
 
                                 </div>
 
@@ -308,26 +243,26 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4><u>Payment</u></h4>
+                                <b>Payment</b>
                                 <div class="row mt-3">
                                     <div class="col-md-4">
                                         <div class="form-group row"><label
                                                 class="col-sm-4 col-form-label text-right">Total Amount</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="p_totalamount"
-                                                    value="0">
+                                            <div class="col-sm-8"><input class="form-control" type="text"
+                                                    id="p_totalamount" value="0">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label text-right">
-                                            <input type="checkbox" id="p_checkbox"> Discount %</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="p_discount"
-                                                    value="0" disabled>
+                                                <input type="checkbox" id="p_checkbox"> Discount %</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text"
+                                                    id="p_discount" value="0" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row"><label
                                                 class="col-sm-4 col-form-label text-right">Expense Percentage</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="expensepercentage"
-                                                    value="0">
+                                            <div class="col-sm-8"><input class="form-control" type="text"
+                                                    id="expensepercentage" value="0">
                                             </div>
                                         </div>
                                     </div>
@@ -341,18 +276,18 @@
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label text-right">Paid Amount</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="paidamount"
-                                                    value="0">
+                                            <div class="col-sm-8"><input class="form-control" type="text"
+                                                    id="paidamount" value="0">
                                             </div>
                                         </div>
                                         <div class="form-group row"><label
                                                 class="col-sm-4 col-form-label text-right">Remaining Amount</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="remainingamount"
-                                                    value="0" disabled>
+                                            <div class="col-sm-8"><input class="form-control" type="text"
+                                                    id="remainingamount" value="0" disabled>
                                             </div>
                                         </div>
-                                    </div> 
-                                    
+                                    </div>
+
                                     <div class="col-md-4" style="border: 3px solid #1c1c1c;">
                                         <div class="form-group row"><label
                                                 class="col-sm-3 col-form-label text-right mt-4">Remarks</label>
@@ -363,10 +298,10 @@
                                         <div class="form-group row">
                                             <div class="col-sm-12 text-center">
                                                 <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-save"></i>&emsp;Save</button>
+                                                        class="fas fa-trash"></i>&emsp;Save</button>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                 </div>
                             </div>
