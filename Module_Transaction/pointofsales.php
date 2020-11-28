@@ -144,16 +144,18 @@
                                         <div class="form-group row">
                                             <div class="col-sm-4"></div>
                                             <div class="col-sm-8">
-                                                <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-cross"></i>&emsp;Remove</button>
+                                                <button type="submit" disabled class="btn btn-primary px-4 py-2 mr-2"><i
+                                                class="fas fa-window-close"></i>&emsp;Remove</button>
                                             </div>
                                         </div>
                                     </div>
 
 
                                     <div class="col-lg-5 pt-3" style="border: 3px solid #1c1c1c; height: 350px;">
-                                        <div class="form-group row"><label class="col-sm-3 col-form-label">Item
-                                                Name :</label>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">
+                                            <input type="checkbox" name="check" id="check">
+                                            Item Name :</label>
                                             <div class="col-sm-9"><select class="form-control" type="text"
                                                     id="itemname">
                                                     <option>Acylex 200mg</option>
@@ -182,6 +184,38 @@
                                                             <td>200.00</td>
                                                             <td>400.00</td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>132</td>
+                                                            <td>1</td>
+                                                            <td>Acylex 200mg</td>
+                                                            <td>2.00</td>
+                                                            <td>200.00</td>
+                                                            <td>400.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>132</td>
+                                                            <td>1</td>
+                                                            <td>Acylex 200mg</td>
+                                                            <td>2.00</td>
+                                                            <td>200.00</td>
+                                                            <td>400.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>132</td>
+                                                            <td>1</td>
+                                                            <td>Acylex 200mg</td>
+                                                            <td>2.00</td>
+                                                            <td>200.00</td>
+                                                            <td>400.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>132</td>
+                                                            <td>1</td>
+                                                            <td>Acylex 200mg</td>
+                                                            <td>2.00</td>
+                                                            <td>200.00</td>
+                                                            <td>400.00</td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -195,54 +229,78 @@
                     </div>
                     <!--end col-->
                 </div>
+                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-12 table-responsive">
-
-                                        <table id="datatable"
-                                            class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
-                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
-                                            role="grid" aria-describedby="datatable_info">
-                                            <thead>
-                                                <tr role="row">
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable"
-                                                        rowspan="1" colspan="1" style="width: 113.889px;"
-                                                        aria-label="Office: activate to sort column ascending">Item ID
-                                                    </th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable"
-                                                        rowspan="1" colspan="1" style="width: 51.8889px;"
-                                                        aria-label="Age: activate to sort column ascending">Batch Number
-                                                    </th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable"
-                                                        rowspan="1" colspan="1" style="width: 51.8889px;"
-                                                        aria-label="Age: activate to sort column ascending">Rate
-                                                    </th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable"
-                                                        rowspan="1" colspan="1" style="width: 51.8889px;"
-                                                        aria-label="Age: activate to sort column ascending">Total
-                                                    </th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable"
-                                                        rowspan="1" colspan="1" style="width: 51.8889px;"
-                                                        aria-label="Age: activate to sort column ascending">WarehouseId
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
+                                <h4><u>Payment</u></h4>
+                                <div class="row mt-3" style="border: 3px solid #1c1c1c;">
+                                    <div class="col-md-4">
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Total Amount</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="p_totalamount"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">
+                                            <input type="checkbox" id="p_checkbox"> Discount %</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="p_discount"
+                                                    value="0" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Expense Percentage</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="expensepercentage"
+                                                    value="0">
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label text-right">Paid Amount</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="paidamount"
+                                                    value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Remaining Amount</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="remainingamount"
+                                                    value="0" disabled>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    
+                                    <div class="col-md-3">
+                                        <div class="form-group row">
+                                            <label class="col-sm-12 col-form-label text-left mt-2">Remarks</label>
+                                            <div class="col-sm-12">
+                                                <div class="form-group"><textarea class="form-control" rows="5"
+                                                        style="resize:none; border: 2px solid gray" id="address"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group row">
+                                            <div class="col-sm-12 pt-5">
+                                                <button type="submit" class="btn btn-primary px-4 py-2 mr-2"><i
+                                                class="fas fa-save"></i>&emsp;Save</button>
+                                            </div>
+                                            <div class="col-sm-12 pt-2">
+                                                <button type="submit" class="btn btn-primary px-4 py-2 mr-2"><i
+                                                class="fas fa-print"></i>&emsp;Print</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <!--end card-body-->
                         </div>
-                        <!--end card-->
                     </div>
-                    <!--end col-->
                 </div>
-                <!--end row-->
             </div>
             <!-- container -->
         </div>
