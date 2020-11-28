@@ -29,7 +29,7 @@
     /* scroll bar y-axix in table css */
     .my-custom-scrollbar {
         position: relative;
-        height: 260px;
+        height: 250px;
         width: 100%;
         overflow: auto;
     }
@@ -56,12 +56,12 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Transaction Module</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Purchase Return</li>
+                                    <li class="breadcrumb-item active">Point Of Sales (POS)</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Purchase Return</h4>
+                            <h4 class="page-title">Point Of Sales (POS)</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -77,48 +77,84 @@
 
                                     <div class="col-lg-4">
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Return No :</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="return_no"
+                                                class="col-sm-4 col-form-label text-right">Invoice No :</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="invoice_no"
                                                     readonly></div>
                                         </div>
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Vendor :</label>
+                                                class="col-sm-4 col-form-label text-right">Customer :</label>
                                             <div class="col-sm-8"><select class="form-control" type="text" id="vendor">
-                                                    <option>Jai Medicos</option>
+                                                    <option>Baba Saian</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Return Date :</label>
+                                                class="col-sm-4 col-form-label text-right">Date :</label>
                                             <div class="col-sm-8">
-                                                <input class="form-control" type="date" id="return_date">
+                                                <input class="form-control" type="date" id="date">
                                             </div>
                                         </div>
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Remarks :</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="remarks">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Currency :</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text"
-                                                    id="currency">
-                                                    <option>PKR</option>
+                                                class="col-sm-4 col-form-label text-right">Referred By :</label>
+                                            <div class="col-sm-8"><select class="form-control" type="text" id="referredby">
+                                                    <option>Baba Saian</option>
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label text-right">
+                                               <input type="checkbox" id="drpercentage_checkbox"> Doctor Percentage
+                                            </label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" type="text" id="dr_percentage" value="0" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
                                         <div class="form-group row"><label
-                                                class="col-sm-4 col-form-label text-right">Total Amount :</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="totalamount">
+                                                class="col-sm-4 col-form-label text-right">Barcode :</label>
+                                            <div class="col-sm-8"><input class="form-control" type="text" id="barcode"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Item ID :</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" id="item_id" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Product name :</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" id="productname" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Seling Qty :</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" id="selingqty" value="1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row"><label
+                                                class="col-sm-4 col-form-label text-right">Unit Price :</label>
+                                            <div class="col-sm-8">
+                                                <input class="form-control" type="text" id="unitprice">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-8">
+                                                <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                                class="fas fa-cross"></i>&emsp;Remove</button>
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <div class="col-lg-8 pt-3" style="border: 3px solid #1c1c1c; height: 341px;">
-                                        <div class="form-group row"><label class="col-sm-2 col-form-label">Item
+                                    <div class="col-lg-5 pt-3" style="border: 3px solid #1c1c1c; height: 350px;">
+                                        <div class="form-group row"><label class="col-sm-3 col-form-label">Item
                                                 Name :</label>
-                                            <div class="col-sm-10"><select class="form-control" type="text"
+                                            <div class="col-sm-9"><select class="form-control" type="text"
                                                     id="itemname">
                                                     <option>Acylex 200mg</option>
                                                 </select>
@@ -129,68 +165,27 @@
                                                 <table class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">#</th>
-                                                            <th scope="col">First</th>
-                                                            <th scope="col">Last</th>
-                                                            <th scope="col">Handle</th>
+                                                            <th scope="col">Barcode</th>
+                                                            <th scope="col">Item ID</th>
+                                                            <th scope="col">Item Name</th>
+                                                            <th scope="col">Rate</th>
+                                                            <th scope="col">Qty</th>
+                                                            <th scope="col">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="overflow-auto">
                                                         <tr>
-                                                            <th scope="row">1</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">2</th>
-                                                            <td>Jacob</td>
-                                                            <td>Thornton</td>
-                                                            <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">3</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">4</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">5</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">6</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">7</th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>@twitter</td>
+                                                            <td>132</td>
+                                                            <td>1</td>
+                                                            <td>Acylex 200mg</td>
+                                                            <td>2.00</td>
+                                                            <td>200.00</td>
+                                                            <td>400.00</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <br><br>
-                                
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-save"></i>&emsp;Save</button>
                                     </div>
                                 </div>
                             </div>
