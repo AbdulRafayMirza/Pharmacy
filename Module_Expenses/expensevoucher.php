@@ -4,7 +4,8 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Pharmacy - Expense Voucher</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -59,33 +60,7 @@
                     <!--end col-->
                 </div>
                 <!--end row-->
-                <!-- end page title end breadcrumb -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-trash"></i>&emsp;Delete</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2"><i
-                                                class="fas fa-file"></i>&emsp;New</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end card-body-->
-                        </div>
-                        <!--end card-->
-                    </div>
-                    <!--end col-->
-                </div>
 
-                <!--end row-->
-                <!-- end page title end breadcrumb -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -204,6 +179,30 @@
                                 
                                 </div>
                                     
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end col-->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                                class="fas fa-trash"></i>&emsp;Delete</button>
+                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                                class="fas fa-edit"></i>&emsp;Update</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                class="fas fa-save"></i>&emsp;Save</button>
+                                        <button type="submit" class="btn btn-primary px-5 py-2"><i
+                                                class="fas fa-file"></i>&emsp;New</button>
+                                    </div>
+                                </div>
                             </div>
                             <!--end card-body-->
                         </div>

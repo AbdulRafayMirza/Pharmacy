@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Pharmacy - Items</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -21,6 +21,11 @@
     <link href="../assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <style>
+    label{
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body class="container-fluid">
@@ -115,6 +120,8 @@
                                     </div>
                                 </div>
 
+                                <br><br>
+
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
                                         <button type="submit" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
@@ -123,6 +130,8 @@
                                         <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
                                     </div>
                                 </div>
+
+                                <br>
                             </div>
                             <!--end card-body-->
                         </div>

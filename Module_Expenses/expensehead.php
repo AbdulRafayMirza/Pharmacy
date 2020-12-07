@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Pharmacy - Expense Head</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -85,7 +85,8 @@
                                         </div>                   
                                     </div>
                                 </div>
-                                <br/>
+                                <br><br>
+
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
                                         <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
@@ -98,6 +99,8 @@
                                                 class="fas fa-file"></i>&emsp;New</button>
                                     </div>
                                 </div>
+
+                                <br>
                             </div>
                             <!--end card-body-->
                         </div>
