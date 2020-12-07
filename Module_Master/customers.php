@@ -4,7 +4,8 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Pharmacy - Customer</title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -21,6 +22,11 @@
     <link href="../assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <style>
+    label{
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body class="container-fluid">
@@ -87,9 +93,6 @@
                                         </div>
                                         <div class="form-group row"><label for="select-customer-class" class="col-sm-2 col-form-label text-right">Class</label>
                                             <div class="col-sm-10"><select class="form-control" type="text" id="select-customer-class"><option>B</option></select></div>
-                                        </div>
-                                        <div class="form-group row"><label for="select-customer-type" class="col-sm-2 col-form-label text-right">Customer Type<small>(For GST Only)</small></label>
-                                            <div class="col-sm-10"><select class="form-control" type="text" id="select-customer-type"><option>Local</option></select></div>
                                         </div>
                                         <div class="form-group row"><label for="text-input-customer-remarks" class="col-sm-2 col-form-label text-right">Remarks</label>
                                             <div class="col-sm-10"><input class="form-control" type="text" id="text-input-customer-remarks"></div>

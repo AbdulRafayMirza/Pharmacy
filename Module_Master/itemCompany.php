@@ -4,7 +4,8 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Pharmacy - Item Company</title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -21,6 +22,11 @@
     <link href="../assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <style>
+    label{
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body class="container-fluid">
@@ -56,17 +62,19 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-company-id" class="col-sm-2 col-form-label text-right">Company ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-company-id" readonly></div>
+                                    <div class="col-lg-5">
+                                        <div class="form-group row"><label for="text-input-company-id" class="col-sm-3 col-form-label text-right">Company ID</label>
+                                            <div class="col-sm-9"><input class="form-control" type="text" id="text-input-company-id" readonly></div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-company-name" class="col-sm-2 col-form-label text-right">Company Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-company-name"></div>
+                                    <div class="col-lg-7">
+                                        <div class="form-group row"><label for="text-input-company-name" class="col-sm-3 col-form-label text-right">Company Name</label>
+                                            <div class="col-sm-9"><input class="form-control" type="text" id="text-input-company-name"></div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <br>
 
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
@@ -76,6 +84,8 @@
                                         <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
                                     </div>
                                 </div>
+
+                                <br>
                             </div>
                             <!--end card-body-->
                         </div>

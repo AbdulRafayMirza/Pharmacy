@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Pharmacy - Warehouse</title>
+    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -42,13 +42,13 @@
                         <div class="page-title-box">
                             <div class="float-right">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Master Module</a></li>
-                                    <li class="breadcrumb-item active">Warehouses</li>
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Expense Module</a></li>
+                                    <li class="breadcrumb-item active">Expense Head</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Warehouses</h4>
+                            <h4 class="page-title">Expense Head</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -61,35 +61,31 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="warehouseid" readonly></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Address</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group"><textarea class="form-control" rows="5"
-                                                        style="resize:none" id="address"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
+                                    <div class="col-lg-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label text-right">Head Id</label>
+                                            <div class="col-sm-7"><input class="form-control" type="text" id="headid"></div>
+                                        </div> 
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Warehouse</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="warehousename"></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">City</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="warehousecity"></div>
-                                        </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label text-right">Expense Head</label>
+                                            <div class="col-sm-7"><input class="form-control" type="text" id="expensehead"></div>
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label text-right">Expense Type</label>
+                                            <div class="col-sm-7">
+                                                <select class="form-control" id="credit_currency"> <option>Payment Head</option></select>
+                                            </div>
+                                        </div>                   
                                     </div>
                                 </div>
-
+                                <br/>
                                 <div class="row">
                                     <div class="col-sm-12 text-center">
                                         <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
@@ -109,21 +105,24 @@
                     </div>
                     <!--end col-->
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
-                                                style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
+
+                                        <table id="datatable"
+                                            class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
+                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
                                             role="grid" aria-describedby="datatable_info">
                                             <thead>
                                                 <tr role="row">
                                                     <th style="width: 155.889px;">Id</th>
-                                                    <th style="width: 240.889px;">Warehouse Name</th>
-                                                    <th style="width: 113.889px;">Address</th>
-                                                    <th style="width: 51.8889px;">City</th>
+                                                    <th style="width: 240.889px;">Expense Head ID</th>
+                                                    <th style="width: 113.889px;">Expense Head</th>
+                                                    <th style="width: 51.8889px;">Expense Type</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -138,6 +137,7 @@
                     </div>
                     <!--end col-->
                 </div>
+
             </div>
             <!-- container -->
         </div>

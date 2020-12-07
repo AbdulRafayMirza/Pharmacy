@@ -62,7 +62,7 @@
                                     </a></li>
                                 <li class="active"><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a>
                                 </li>
-                                <li class="has-submenu"><a href="javascript:void(0);"><i class="ti-wand"></i>Vendors And
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
                                     <ul class="submenu">
                                         <li><a href="vendors.php">Vendors</a></li>

@@ -57,11 +57,8 @@
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
                                 <li class="active"><a href="company.php"><i class="ti-desktop"></i>Company</a></li>
-                                <li class="active"><a href="warehouses.php">
-                                        <i class="ti-id-badge"></i>Warehouses
-                                    </a></li>
-                                <li class="active"><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a>
-                                </li>
+                                <li class="active"><a href="warehouses.php"><i class="ti-id-badge"></i>Warehouses</a></li>
+                                <li class="active"><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a></li>
                                 <li class="has-submenu"><a href="javascript:void(0);"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
                                     <ul class="submenu">
@@ -127,7 +124,7 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-wallet"></i>Stock Adjustment</a>
                                     <ul class="submenu">
                                         <li><a href="updatequantity.php">Update Quantity</a></li>
-                                        <li><a href="updateexpirydate.php">Update Expiry Date</a></li>
+                                        <li><a href="updateexpirydate.php">Update Expiry Date</a></li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                         <li><a href="warehousestransfer.php">Warehouses Transfer</a></li>
                                     </ul>
                                 </li>

@@ -56,44 +56,44 @@
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-bar-chart"></i>
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
-                                <li><a href="Module_Master/company.php"><i class="ti-desktop"></i>Company</a></li>
-                                <li><a href="">
-                                        <iclass="ti-id-badge"></i>Warehouses
+                                <li class="active"><a href="company.php"><i class="ti-desktop"></i>Company</a></li>
+                                <li class="active"><a href="warehouses.php">
+                                        <i class="ti-id-badge"></i>Warehouses
                                     </a></li>
-                                <li><a href=""><i class="ti-receipt"></i>Bank Setup</a>
+                                <li class="active"><a href="banksetup.php"><i class="ti-receipt"></i>Bank Setup</a>
                                 </li>
-                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendors And
+                                <li class="has-submenu"><a href="javascript:void(0);"><i class="ti-wand"></i>Vendors And
                                         Customers</a>
                                     <ul class="submenu">
-                                        <li><a href="">Vendors</a></li>
-                                        <li><a href="">Customers</a></li>
+                                        <li><a href="vendors.php">Vendors</a></li>
+                                        <li><a href="customers.php">Customers</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Item Company</a></li>
-                                        <li><a href="">Items Packing Type</a></li>
-                                        <li><a href="">Items</a></li>
+                                        <li><a href="itemCompany.php">Item Company</a></li>
+                                        <li><a href="packingType.php">Items Packing Type</a></li>
+                                        <li><a href="items.php">Items</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
-                                        <li><a href="">Currency</a></li>
-                                        <li><a href="">Currency Rate</a></li>
+                                        <li><a href="currencies.php">Currency</a></li>
+                                        <li><a href="currencyRates.php">Currency Rate</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="">Employees</a></li>
+                                        <li><a href="employees.php">Employees</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
                                     <ul class="submenu">
-                                        <li><a href="">Doctor Speciality</a></li>
-                                        <li><a href="">Doctor Profile</a></li>
-                                        <li><a href="">Other Companies</a></li>
+                                        <li><a href="doctorSpeciality.php">Doctor Speciality</a></li>
+                                        <li><a href="doctorProfile.php">Doctor Profile</a></li>
+                                        <li><a href="othercompanies.php">Other Companies</a></li>
                                     </ul>
                                 </li>
 
@@ -101,18 +101,43 @@
                             <!--end submenu-->
                         </li>
                         <!--end has-submenu-->
-                        
+
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-server"></i>
                                 <span>Transaction Module</span></a>
                             <ul class="submenu submenu-tab">
-                                <li><a href="crypto/crypto-index.html"><i class="ti-dashboard"></i>Dashboard</a></li>
-                                <li><a href="crypto/crypto-exchange.html"><i class="ti-loop"></i>Exchange</a></li>
-                                <li><a href="crypto/crypto-wallet.html"><i class="ti-wallet"></i>My Wallet</a></li>
-                                <li><a href="crypto/crypto-calendar.html"><i class="ti-calendar"></i>Calendar</a></li>
-                                <li><a href="crypto/crypto-news.html"><i class="ti-microphone-alt"></i>Crypto News</a>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Stock Opening</a>
+                                    <ul class="submenu">
+                                        <li><a href="stockopening.php">Stock Opening</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="crypto/crypto-ico.html"><i class="ti-receipt"></i>ICO List</a></li>
-                                <li><a href="crypto/crypto-settings.html"><i class="ti-settings"></i>Settings</a></li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Purchase</a>
+                                    <ul class="submenu">
+                                        <li><a href="purchaseinvoice.php">Purchase Invoice</a></li>
+                                        <li><a href="purchasereturn.php">Purchase Return</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Sales</a>
+                                    <ul class="submenu">
+                                        <li><a href="saleinvoice.php">Sales Invoice</a></li>
+                                        <li><a href="salereturn.php">Sales Return</a></li>
+                                        <li><a href="pointofsales.php">Point Of Sales (POS)</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="quotation.php"><i class="ti-microphone-alt"></i>Quotation</a></li>
+
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wallet"></i>Stock
+                                        Adjustment</a>
+                                    <ul class="submenu">
+                                        <li><a href="updatequantity.php">Update Quantity</a></li>
+                                        <li><a href="updateexpirydate.php">Update Expiry Date</a></li>
+                                        <li><a href="warehousestransfer.php">Warehouses Transfer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-receipt"></i>Reports</a>
+                                    <ul class="submenu">
+                                        <!-- <li><a href=""></a></li> -->
+                                    </ul>
+                                </li>
                             </ul>
                             <!--end submenu-->
                         </li>
@@ -120,18 +145,28 @@
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-briefcase"></i>
                                 <span>Accounting Module</span></a>
                             <ul class="submenu submenu-tab">
-                                <li><a href="projects-index.html"><i class="ti-bar-chart-alt"></i>Dashboard</a></li>
-                                <li><a href="projects-team.html"><i class="ti-cup"></i>Team</a></li>
-                                <li><a href="projects-project.html"><i class="ti-wand"></i>Project</a></li>
-                                <li><a href="projects-task.html"><i class="ti-layout-list-thumb"></i>Tasks</a></li>
-                                <li><a href="projects-kanban-board.html"><i class="ti-move"></i>Kanban Board</a></li>
-                                <li><a href="projects-chat.html"><i class="ti-comments"></i>Chat</a></li>
-                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>More Pages</a>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Vendor</a>
                                     <ul class="submenu">
-                                        <li><a href="projects-clients.html">Clients</a></li>
-                                        <li><a href="projects-users.html">Users</a></li>
-                                        <li><a href="projects-invoice.html">Invoice</a></li>
-                                        <li><a href="projects-calendar.html">Calendar</a></li>
+                                        <li><a href="vendordebit.php">Vendor (Debit)</a></li>
+                                        <li><a href="vendorcredit.php">Vendor (Credit)</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-user"></i>Customer</a>
+                                    <ul class="submenu">
+                                        <li><a href="customerdebit.php">Customer (Debit)</a></li>
+                                        <li><a href="customercredit.php">Customer (Credit)</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-bar-chart-alt"></i>Cash
+                                        Entry</a>
+                                    <ul class="submenu">
+                                        <li><a href="cashentry.php">Cash Entry</a></li>
+                                        <li><a href="banktransaction.php">Bank Transaction</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu"><a href="javascript:;"><i class="ti-wand"></i>Reports</a>
+                                    <ul class="submenu">
+                                        <!-- <li><a href=""></a></li> -->
                                     </ul>
                                 </li>
                                 <!--end has-submenu-->
@@ -141,17 +176,18 @@
                         <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i
                                     class="ti-shopping-cart-full"></i> <span>Alets Module</span></a>
                             <ul class="submenu submenu-tab">
-                                <li><a href="ecommerce/ecommerce-index.html"><i class="ti-dashboard"></i>Dashboard</a>
+                                <li><a href="nearexpiryitems.php"><i class="ti-dashboard"></i>New Expiry
+                                        Items</a></li>
+                                <li><a href="expireditems.php"><i class="ti-gift"></i>Expired Items</a>
                                 </li>
-                                <li><a href="ecommerce/ecommerce-products.html"><i class="ti-gift"></i>Products</a></li>
-                                <li><a href="ecommerce/ecommerce-product-list.html"><i class="ti-list"></i>Product
-                                        List</a></li>
-                                <li><a href="ecommerce/ecommerce-product-detail.html"><i class="ti-package"></i>Product
-                                        Detail</a></li>
-                                <li><a href="ecommerce/ecommerce-cart.html"><i class="ti-shopping-cart"></i>Cart</a>
-                                </li>
-                                <li><a href="ecommerce/ecommerce-checkout.html"><i
-                                            class="ti-credit-card"></i>Checkout</a></li>
+                                <li><a href="zerostockitems.php"><i class="ti-list"></i>Zero Stock
+                                        Items</a></li>
+                                <li><a href="lessquantityitmes.php"><i class="ti-package"></i>Less Quantity
+                                        Items</a></li>
+                                <li><a href="notsolditems.php"><i class="ti-shopping-cart"></i>Not Sold
+                                        Items</a></li>
+                                <li><a href="lowcreditcustomers.php"><i class="ti-credit-card"></i>Low
+                                        Credit Customers</a></li>
                             </ul>
                             <!--end submenu-->
                         </li>

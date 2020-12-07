@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Pharmacy - Company</title>
+    <title>Metrica - Responsive Bootstrap 4 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -38,13 +38,13 @@
                         <div class="page-title-box">
                             <div class="float-right">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Master Module</a></li>
-                                    <li class="breadcrumb-item active">Company</li>
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Accounting Module</a></li>
+                                    <li class="breadcrumb-item active">Customer Credit</li>
                                 </ol>
                                 <!--end breadcrumb-->
                             </div>
                             <!--end /div-->
-                            <h4 class="page-title">Company</h4>
+                            <h4 class="page-title">Customer Credit</h4>
                         </div>
                         <!--end page-title-box-->
                     </div>
@@ -59,51 +59,43 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label text-right">Company Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="companyname">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Phone</label>
-                                            <div class="col-sm-10"><input class="form-control" type="tel" id="phone">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">GSTIN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number" id="gstin">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Address</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group"><textarea class="form-control" rows="5"
-                                                        style="resize:none" id="address"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            <label class="col-sm-2 col-form-label text-right">Transaction Date</label>
+                                            <div class="col-sm-10"><input class="form-control" type="date" id="credit_transactiondate"></div>
+                                        </div>                        
                                     </div>
+
                                     <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Company Owner</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="companyowner"></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Email</label>
-                                            <div class="col-sm-10"><input class="form-control" type="email" id="email">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Currency</label>
+                                            <div class="col-sm-10"><select class="form-control" id="credit_currency">
+                                                    <option>PKR</option>
+                                                </select>
                                             </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">PAN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number" id="pan">
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label text-right">Remarks</label>
+                                            <div class="col-sm-11"><input class="form-control" type="text" id="credit_remarks"></div>
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Customer</label>
+                                            <div class="col-sm-10"><select class="form-control" id="credit_customer">
+                                                    <option>Baba Saian</option>
+                                                </select>
                                             </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Remarks</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="remarks">
-                                            </div>
-                                        </div>
+                                        </div>                        
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label text-right">Account</label>
+                                            <div class="col-sm-10"><input class="form-control" type="text" id="credit_account"></div>
+                                        </div>                                        
                                     </div>
                                 </div>
 
@@ -112,7 +104,7 @@
                                         <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                             class="fas fa-save"></i>&emsp;Save</button>
                                         <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                            class="fa fa-times"></i>&emsp;Exit</button>
+                                            class="fa fa-times"></i>&emsp;Exit</button> 
                                     </div>
                                 </div>
                             </div>
