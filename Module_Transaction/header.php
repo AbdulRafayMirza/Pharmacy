@@ -53,7 +53,7 @@
                 <div id="navigation">
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
-                    <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-bar-chart"></i>
+                        <li class="has-submenu"><a href="javascript:;" class="navbar-link"><i class="ti-bar-chart"></i>
                                 <span>Master Module</span></a>
                             <ul class="submenu submenu-tab">
                                 <li class="active"><a href="company.php"><i class="ti-desktop"></i>Company</a></li>
