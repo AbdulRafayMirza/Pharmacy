@@ -72,15 +72,15 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="Module_Master/itemCompany.php">Item Company</a></li>
-                                        <li><a href="Module_Master/packingType.php">Items Packing Type</a></li>
+                                        <li><a href="Module_Master/itemcompany.php">Item Company</a></li>
+                                        <li><a href="Module_Master/packingtype.php">Items Packing Type</a></li>
                                         <li><a href="Module_Master/items.php">Items</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
                                         <li><a href="Module_Master/currencies.php">Currency</a></li>
-                                        <li><a href="Module_Master/currencyRates.php">Currency Rate</a></li>
+                                        <li><a href="Module_Master/currencyrates.php">Currency Rate</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
@@ -91,8 +91,8 @@
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
                                     <ul class="submenu">
-                                        <li><a href="Module_Master/doctorSpeciality.php">Doctor Speciality</a></li>
-                                        <li><a href="Module_Master/doctorProfile.php">Doctor Profile</a></li>
+                                        <li><a href="Module_Master/doctorspeciality.php">Doctor Speciality</a></li>
+                                        <li><a href="Module_Master/doctorprofile.php">Doctor Profile</a></li>
                                         <li><a href="Module_Master/othercompanies.php">Other Companies</a></li>
                                     </ul>
                                 </li>

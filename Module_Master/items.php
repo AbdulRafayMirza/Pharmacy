@@ -1,3 +1,6 @@
+<?php
+include_once('../conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,7 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
-    label{
+    label {
         font-weight: bold;
     }
     </style>
@@ -60,76 +63,153 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="form-group row"><label for="text-input-item-id" class="col-sm-4 col-form-label text-right">Item ID</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-id" readonly></div>
+                                <form id="itemsform">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="form-group row">
+                                                <label class="col-sm-4 col-form-label text-right">Item ID</label>
+                                                <div class="col-sm-8"><input value="" class="form-control" id="itemid"
+                                                        readonly></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-batch-number"
+                                                    class="col-sm-4 col-form-label text-right">Batch Number</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text"
+                                                        id="batchnumber"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-name"
+                                                    class="col-sm-4 col-form-label text-right">Item Name</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text"
+                                                        id="itemname" required></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-short-name"
+                                                    class="col-sm-4 col-form-label text-right">Short Name</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text"
+                                                        id="shortname"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="select-item-packing-type"
+                                                    class="col-sm-4 col-form-label text-right">Packing Type</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" id="packingtype">
+                                                        <option selected disabled>Select Packing Type</option>
+                                                        <?php
+                                                            $sql = 'SELECT * FROM packingtype';
+                                                            $result = mysqli_query($conn,$sql);
+                                                            if(mysqli_num_rows($result) > 0){
+                                                                while($row = mysqli_fetch_assoc($result)){
+                                                                    echo'
+                                                                        <option value="'.$row['PackingType'].'">'.$row['PackingType'].'</option>
+                                                                    ';
+                                                                }
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label for="select-item-category"
+                                                    class="col-sm-4 col-form-label text-right">Category</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" id="category">
+                                                        <option selected disabled>Select Category</option>
+                                                        <option value="Finished Goods">Finished Goods</option>
+                                                        <option value="Raw Materials">Raw Materials</option>
+                                                        <option value="General">General</option>
+                                                        <option value="Packing Materials">Packing Materials</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label for="select-item-company"
+                                                    class="col-sm-4 col-form-label text-right">Company</label>
+                                                <div class="col-sm-8">
+                                                    <select class="form-control" type="text" id="company">
+                                                        <option selected disabled>Select Item Company</option>
+                                                        <?php
+                                                            $sql = 'SELECT * FROM itemcompany';
+                                                            $result = mysqli_query($conn,$sql);
+                                                            if(mysqli_num_rows($result) > 0){
+                                                                while($row = mysqli_fetch_assoc($result)){
+                                                                    echo'
+                                                                        <option value="'.$row['CompanyName'].'">'.$row['CompanyName'].'</option>
+                                                                    ';
+                                                                }
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-item-batch-number" class="col-sm-4 col-form-label text-right">Batch Number</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-batch-number"></div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group row"><label for="text-input-item-gst-percent"
+                                                    class="col-sm-4 col-form-label text-right">GST (%)</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="gst"
+                                                        value="0">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-selling-price"
+                                                    class="col-sm-4 col-form-label text-right">Selling Price</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="sellingprice"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-alarm-quantity"
+                                                    class="col-sm-4 col-form-label text-right">Alarm Quantity</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="alarmquantity"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-units-in-pack"
+                                                    class="col-sm-4 col-form-label text-right">Units in Pack</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="unitsinpack"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-barcode"
+                                                    class="col-sm-4 col-form-label text-right">Barcode</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="barcode"></div>
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-item-name" class="col-sm-4 col-form-label text-right">Item Name</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-name"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-short-name" class="col-sm-4 col-form-label text-right">Short Name</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-short-name"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="select-item-packing-type" class="col-sm-4 col-form-label text-right">Packing Type</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-packing-type"><option>Strip</option></select></div>
-                                        </div>
-                                        <div class="form-group row"><label for="select-item-category" class="col-sm-4 col-form-label text-right">Category</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-category"><option></option></select></div>
-                                        </div>
-                                        <div class="form-group row"><label for="select-item-company" class="col-sm-4 col-form-label text-right">Company</label>
-                                            <div class="col-sm-8"><select class="form-control" type="text" id="select-item-company"><option>Abbott</option></select></div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group row"><label for="text-input-item-gst-percent"
+                                                    class="col-sm-4 col-form-label text-right">Trade Price</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="tradeprice"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-selling-price"
+                                                    class="col-sm-4 col-form-label text-right">Selling %</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="sellingpercent"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-alarm-quantity"
+                                                    class="col-sm-4 col-form-label text-right">Packs in Carton</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" value="0"
+                                                        id="carton"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-units-in-pack"
+                                                    class="col-sm-4 col-form-label text-right">RFID Tag</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="rfid"
+                                                        value="0">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-item-barcode"
+                                                    class="col-sm-4 col-form-label text-right">HSN</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="hsn">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group row"><label for="text-input-item-gst-percent" class="col-sm-4 col-form-label text-right">GST (%)</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-gst-percent"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-selling-price" class="col-sm-4 col-form-label text-right">Selling Price</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-selling-price"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-alarm-quantity" class="col-sm-4 col-form-label text-right">Alarm Quantity</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-alarm-quantity"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-units-in-pack" class="col-sm-4 col-form-label text-right">Units in Pack</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-units-in-pack"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-barcode" class="col-sm-4 col-form-label text-right">Barcode</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-barcode"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group row"><label for="text-input-item-gst-percent" class="col-sm-4 col-form-label text-right">Trade Price</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-gst-percent"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-selling-price" class="col-sm-4 col-form-label text-right">Selling %</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-selling-price"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-alarm-quantity" class="col-sm-4 col-form-label text-right">Packs in Carton</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-alarm-quantity"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-units-in-pack" class="col-sm-4 col-form-label text-right">RFID Tag</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-units-in-pack"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-item-barcode" class="col-sm-4 col-form-label text-right">HSN</label>
-                                            <div class="col-sm-8"><input class="form-control" type="text" id="text-input-item-barcode"></div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <br><br>
+                                    <br><br>
 
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-trash"></i>&emsp;Delete</button>
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-edit"></i>&emsp;Update</button>
+                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save" id="buttonsubmit"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-file"></i>&emsp;New</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
 
                                 <br>
                             </div>
@@ -146,29 +226,29 @@
                                 <div class="row">
                                     <div class="col-lg-12 table-responsive">
 
-                                        <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                        <table id="datatable" class="table table-bordered "
+                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 155.889px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Item ID</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240.889px;" aria-label="Position: activate to sort column ascending">Batch Number</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 113.889px;" aria-label="Office: activate to sort column ascending">Item Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Short Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Company</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Packing Type</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Category</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Trade Price</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Retail Price</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Alarm Quantity</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Unit in Pack</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Packs in Carton</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Barcode Number</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">RFID Tag</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Selling Percent</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">GST Rate</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">HSN</th>
+                                                    <th>Item ID</th>
+                                                    <th>Batch Number</th>
+                                                    <th>Item Name</th>
+                                                    <th>Short Name</th>
+                                                    <th>Packing Type</th>
+                                                    <th>Category</th>
+                                                    <th>Company</th>
+                                                    <th>Trade Price</th>
+                                                    <th>Retail Price</th>
+                                                    <th>Alarm Quantity</th>
+                                                    <th>Unit in Pack</th>
+                                                    <th>Packs in Carton</th>
+                                                    <th>Barcode Number</th>
+                                                    <th>Selling Percent</th>
+                                                    <th>GST Rate</th>
+                                                    <th>HSN</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="item_body">
                                             </tbody>
                                         </table>
                                     </div>
@@ -185,7 +265,9 @@
         </div>
         <!-- end page content -->
         <footer class="footer text-center text-sm-left">
-            <div class="boxed-footer">&copy; 2020 Pharmacy <span class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/" target="_blank">Matz Solutions Pvt Ltd</a></span></div>
+            <div class="boxed-footer">&copy; 2020 Pharmacy <span
+                    class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/"
+                        target="_blank">Matz Solutions Pvt Ltd</a></span></div>
         </footer>
         <!--end footer-->
     </div>
@@ -219,6 +301,155 @@
     <script src="../assets/pages/jquery.datatable.init.js"></script>
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
+
+
+    <!-- Print Excel File functionality start -->
+    <script>
+    $(document).ready(function() {
+        $('#datatable').dataTable().fnDestroy();
+        initializeDatatable();
+    });
+
+    function initializeDatatable() {
+        $('#datatable').dataTable({
+
+            // responsive: true,
+            dom: 'Bfrtip',
+            buttons: {
+                dom: {
+                    button: {
+                        className: 'btn btn-success '
+                    }
+                },
+                buttons: [{
+                    extend: 'csv',
+                    text: '<i class="fas fa-file-excel"></i> Print to Excel', //u can define a diferent text or icon
+                    // exportOptions: {
+                    // columns: [0,1,2,3,4,5,6,7,8,9]
+                    // }
+                }, ]
+            }
+        });
+    }
+    </script>
+    <!-- Print Excel File functionality start -->
+
+
+    <!-- form refresh using ajax start -->
+    <script>
+    $('#newBtn').on('click', function() {
+        ResetForm();
+    })
+    </script>
+    <!-- form refresh using ajax end -->
+
+
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax start-->
+    <script>
+    $(document).ready(function() {
+        getMaxId();
+        fetch_table_data();
+    });
+
+    function getMaxId() {
+        $.ajax({
+            type: 'POST',
+            url: 'getMaxIDOfTable.php',
+            data: 'columnName=' + 'ItemID' + '&tableName=' + 'items',
+            success: function(response) {
+                $('#itemid').val(response);
+            }
+        })
+    }
+
+    function fetch_table_data() {
+        $.ajax({
+            url: 'get_ItemData.php',
+            success: function(response) {
+                console.log(response);
+                $('#datatable').dataTable().fnDestroy();
+                $('#item_body').html(response);
+                // $('#datatable').dataTable();
+                initializeDatatable();
+
+            }
+        })
+    }
+    </script>
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+
+
+    <!-- itemcompany form submit using ajax -->
+    <script>
+    $('#itemsform').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var itemid = $('#itemid').val();
+        var batchnumber = $('#batchnumber').val();
+        var itemname = $('#itemname').val();
+        var shortname = $('#shortname').val();
+        var packingtype = $('#packingtype').val();
+        var category = $('#category').val();
+        var company = $('#company').val();
+        var gst = $('#gst').val();
+        var sellingprice = $('#sellingprice').val();
+        var alarmquantity = $('#alarmquantity').val();
+        var unitsinpack = $('#unitsinpack').val();
+        var barcode = $('#barcode').val();
+        var tradeprice = $('#tradeprice').val();
+        var sellingpercent = $('#sellingpercent').val();
+        var carton = $('#carton').val();
+        var rfid = $('#rfid').val();
+        var hsn = $('#hsn').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'itemsubmit.php',
+            data: 'itemid=' + itemid + '&batchnumber=' + batchnumber + '&itemname=' + itemname +
+                '&shortname=' + shortname + '&packingtype=' + packingtype + '&category=' + category +
+                '&company=' + company + '&gst=' + gst + '&sellingprice=' + sellingprice +
+                '&alarmquantity=' + alarmquantity + '&unitsinpack=' + unitsinpack + '&barcode=' +
+                barcode + '&tradeprice=' + tradeprice + '&sellingpercent=' + sellingpercent +
+                '&carton=' + carton + '&rfid=' + rfid + '&hsn=' + hsn,
+
+            success: function(response) {
+                // console.log(response);
+                alert(response);
+
+                ResetForm();
+                getMaxId();
+                fetch_table_data();
+            }
+        });
+
+    });
+    </script>
+
+    <!-- Reset Form without page Refresh -->
+    <script>
+    function ResetForm() {
+        // $('#itemid').val('');
+        $('#batchnumber').val('');
+        $('#itemname').val('');
+        $('#shortname').val('');
+        $('#packingtype').val('');
+        $('#category').val('');
+        $('#company').val('');
+        $('#gst').val('0');
+        $('#sellingprice').val('0');
+        $('#alarmquantity').val('0');
+        $('#unitsinpack').val('0');
+        $('#barcode').val('0');
+        $('#tradeprice').val('0');
+        $('#sellingpercent').val('0');
+        $('#carton').val('0');
+        $('#rfid').val('0');
+        $('#hsn').val('');
+    }
+    </script>
+
+
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+<?php
+include_once('../conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
 
     <meta charset="utf-8">
     <title>Pharmacy - Item Company</title>
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -23,7 +27,7 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
-    label{
+    label {
         font-weight: bold;
     }
     </style>
@@ -61,29 +65,39 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <div class="form-group row"><label for="text-input-company-id" class="col-sm-3 col-form-label text-right">Company ID</label>
-                                            <div class="col-sm-9"><input class="form-control" type="text" id="text-input-company-id" readonly></div>
+                                <form id="itemcompanyform">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <div class="form-group row"><label for="text-input-company-id"
+                                                    class="col-sm-4 col-form-label text-right">Company ID</label>
+                                                <div class="col-sm-8"><input value="" class="form-control"
+                                                        id="companyid" readonly></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="form-group row"><label for="text-input-company-name"
+                                                    class="col-sm-3 col-form-label text-right">Company Name</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="companyname" required></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-7">
-                                        <div class="form-group row"><label for="text-input-company-name" class="col-sm-3 col-form-label text-right">Company Name</label>
-                                            <div class="col-sm-9"><input class="form-control" type="text" id="text-input-company-name"></div>
+
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-trash"></i>&emsp;Delete</button>
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-edit"></i>&emsp;Update</button>
+                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save" id="buttonsubmit"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-file"></i>&emsp;New</button>
                                         </div>
                                     </div>
-                                </div>
-
-                                <br>
-
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
-                                    </div>
-                                </div>
+                                </form>
 
                                 <br>
                             </div>
@@ -100,14 +114,17 @@
                                 <div class="row">
                                     <div class="col-lg-12">
 
-                                        <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                        <table id="datatable"
+                                            class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
+                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
+                                            role="grid" aria-describedby="datatable_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 155.889px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Company ID</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240.889px;" aria-label="Position: activate to sort column ascending">Company Name</th>
+                                                    <th>Company ID</th>
+                                                    <th>Company Name</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="itemcompany_body">
                                             </tbody>
                                         </table>
                                     </div>
@@ -124,7 +141,9 @@
         </div>
         <!-- end page content -->
         <footer class="footer text-center text-sm-left">
-            <div class="boxed-footer">&copy; 2020 Pharmacy <span class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/" target="_blank">Matz Solutions Pvt Ltd</a></span></div>
+            <div class="boxed-footer">&copy; 2020 Pharmacy <span
+                    class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/"
+                        target="_blank">Matz Solutions Pvt Ltd</a></span></div>
         </footer>
         <!--end footer-->
     </div>
@@ -158,6 +177,85 @@
     <script src="../assets/pages/jquery.datatable.init.js"></script>
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
+
+
+    <!-- form refresh using ajax start -->
+    <script>
+    $('#newBtn').on('click', function() {
+        ResetForm();
+    })
+    </script>
+    <!-- form refresh using ajax end -->
+
+
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax start-->
+    <script>
+    $(document).ready(function() {
+        getMaxId();
+        fetch_table_data();
+    });
+
+    function getMaxId() {
+        $.ajax({
+            type: 'POST',
+            url: 'getMaxIDOfTable.php',
+            data: 'columnName=' + 'CompanyID' + '&tableName=' + 'itemcompany',
+            success: function(response) {
+                $('#companyid').val(response);
+            }
+        })
+    }
+
+    function fetch_table_data() {
+        $.ajax({
+            url: 'get_ItemCompanyData.php',
+            success: function(response) {
+                console.log(response);
+                $('#datatable').dataTable().fnDestroy();
+                $('#itemcompany_body').html(response);
+                $('#datatable').dataTable();
+            }
+        })
+    }
+    </script>
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+
+
+    <!-- itemcompany form submit using ajax -->
+    <script>
+    $('#itemcompanyform').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var companyid = $('#companyid').val();
+        var companyname = $('#companyname').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'itemcompanysubmit.php',
+            data: 'companyid=' + companyid + "&companyname=" + companyname,
+            success: function(response) {
+                // console.log(response);
+                alert(response);
+
+                ResetForm();
+                getMaxId();
+                fetch_table_data();
+            }
+        });
+
+    });
+    </script>
+
+    <!-- Reset Form without page Refresh -->
+    <script>
+    function ResetForm() {
+        // $('#companyid').val(''); 
+        $('#companyname').val('');
+    }
+    </script>
+
+
 </body>
 
 </html>

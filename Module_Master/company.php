@@ -18,7 +18,7 @@
     <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
     <style>
-    label{
+    label {
         font-weight: bold;
     }
     </style>
@@ -56,65 +56,74 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label text-right">Company Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="companyname">
+                                <form id="companyform">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label text-right">Company Name</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="companyname" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">Phone</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        data-inputmask="'mask': '9999-9999999'" id="phone"
+                                                        onchange="checkNumber();" placeholder="e.g. 0300-0000000"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">GSTIN</label>
+                                                <div class="col-sm-9"><input class="form-control" type="number"
+                                                        placeholder="GSTIN should be 15 digits" id="gstin" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">Address</label>
+                                                <div class="col-sm-9">
+                                                    <div class="form-group"><textarea class="form-control" rows="5"
+                                                            style="resize:none" id="address" required></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Phone</label>
-                                            <div class="col-sm-10"><input class="form-control" type="tel" id="phone">
+                                        <div class="col-lg-6">
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">Company Owner</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="companyowner" required></div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">GSTIN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number" id="gstin">
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">Email</label>
+                                                <div class="col-sm-9"><input class="form-control" type="email"
+                                                        id="email" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Address</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group"><textarea class="form-control" rows="5"
-                                                        style="resize:none" id="address"></textarea>
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">PAN</label>
+                                                <div class="col-sm-9"><input class="form-control" type="number"
+                                                        placeholder="Autofilled from GSTIN field" id="pan">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label
+                                                    class="col-sm-3 col-form-label text-right">Remarks</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="remarks">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Company Owner</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text"
-                                                    id="companyowner"></div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Email</label>
-                                            <div class="col-sm-10"><input class="form-control" type="email" id="email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">PAN</label>
-                                            <div class="col-sm-10"><input class="form-control" type="number" id="pan">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Remarks</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="remarks">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                            class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                            class="fa fa-times"></i>&emsp;Exit</button>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"
+                                                id="buttonsubmit"><i class="fas fa-save"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fa fa-times"></i>&emsp;Exit</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <!--end card-body-->
                         </div>
@@ -149,6 +158,82 @@
     <script src="../assets/pages/jquery.projects_dashboard.init.js"></script>
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
+
+
+    <!-- form refresh using ajax start -->
+    <script>
+    $('#newBtn').on('click', function() {
+        ResetForm();
+    })
+    </script>
+    <!-- form refresh using ajax end -->
+
+
+    <!-- Phone No Validation start-->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+
+    <script>
+    $(":input").inputmask();
+
+    function checkNumber() {
+        str = document.getElementById('phone').value;
+
+        if (str.substring(0, 2) == '03') {
+            jQuery('#buttonsubmit').prop("disabled", false);
+        } else {
+            alert('Please enter correct mobile number');
+            jQuery('#buttonsubmit').prop("disabled", true);
+            return false;
+        }
+    }
+    </script>
+    <!-- Phone No Validation end-->
+
+
+    <!-- Company form submit using ajax -->
+    <script>
+    $('#companyform').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var companyname = $('#companyname').val();
+        var phone = $('#phone').val();
+        var gstin = $('#gstin').val();
+        var address = $('#address').val();
+        var companyowner = $('#companyowner').val();
+        var email = $('#email').val();
+        var pan = $('#pan').val();
+        var remarks = $('#remarks').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'companysubmit.php',
+            data: 'companyname=' + companyname + "&phone=" + phone + "&gstin=" + gstin + "&address=" +
+                address + "&companyowner=" + companyowner + "&email=" + email + "&pan=" + pan +
+                "&remarks=" + remarks,
+            success: function(response) {
+                alert(response);
+
+                ResetForm();
+            }
+        });
+    });
+    </script>
+
+    <!-- Reset Form without page Refresh -->
+    <script>
+    function ResetForm() {
+        $('#companyname').val('');
+        $('#phone').val('');
+        $('#gstin').val('');
+        $('#address').val('');
+        $('#companyowner').val('');
+        $('#email').val('');
+        $('#pan').val('');
+        $('#remarks').val('');
+    }
+    </script>
+
 </body>
 
 </html>

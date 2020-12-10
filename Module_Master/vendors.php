@@ -1,3 +1,7 @@
+<?php
+include_once('../conn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,7 @@
 
     <meta charset="utf-8">
     <title>Pharmacy - Vendor</title>
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta content="A premium admin dashboard template by Mannatthemes" name="description">
     <meta content="Mannatthemes" name="author">
@@ -23,7 +27,7 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
-    label{
+    label {
         font-weight: bold;
     }
     </style>
@@ -61,49 +65,78 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-vendor-id" class="col-sm-2 col-form-label text-right">Vendor ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-id" readonly></div>
+                                <form id="vendorsform">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label text-right">Vendor ID</label>
+                                                    <div class="col-sm-9"><input value="" class="form-control"
+                                                    id="vendorid" readonly></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-vendor-name"
+                                                    class="col-sm-3 col-form-label text-right">Vendor Name</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="vendorname" required></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-vendor-responsible"
+                                                    class="col-sm-3 col-form-label text-right">Responsible</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="responsible"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="tel-input-phone"
+                                                    class="col-sm-3 col-form-label text-right">Phone</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        data-inputmask="'mask': '9999-9999999'" id="phone"
+                                                        onchange="checkNumber();" placeholder="e.g. 0300-0000000">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row"><label for="textarea-input-address"
+                                                    class="col-sm-3 col-form-label text-right">Address</label>
+                                                <div class="col-sm-9">
+                                                    <div class="form-group"><textarea class="form-control" rows="5"
+                                                            style="resize:none" id="address"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group row"><label for="text-input-vendor-name" class="col-sm-2 col-form-label text-right">Vendor Name</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-name"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-vendor-responsible" class="col-sm-2 col-form-label text-right">Responsible</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-responsible"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="tel-input-phone"
-                                                class="col-sm-2 col-form-label text-right">Phone</label>
-                                            <div class="col-sm-10"><input class="form-control" type="tel"
-                                                    id="tel-input-phone"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="textarea-input-address" class="col-sm-2 col-form-label text-right">Address</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group"><textarea class="form-control" rows="5" style="resize:none" id="textarea-input-address"></textarea></div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group row"><label for="text-input-vendor-email"
+                                                    class="col-sm-3 col-form-label text-right">Email</label>
+                                                <div class="col-sm-9"><input class="form-control" type="email"
+                                                        id="email"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="text-input-vendor-reg-no"
+                                                    class="col-sm-3 col-form-label text-right">Reg No</label>
+                                                <div class="col-sm-9"><input class="form-control" type="text"
+                                                        id="regno"></div>
+                                            </div>
+                                            <div class="form-group row"><label for="select-vendor-type"
+                                                    class="col-sm-3 col-form-label text-right">Vendor Type<small>(For
+                                                        GST Only)</small></label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" id="vendortype">
+                                                        <option selected disabled>Select Vendor Type</option>
+                                                        <option value="Local">Local</option>
+                                                        <option value="Outsider">Outsider</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label for="text-input-vendor-email" class="col-sm-2 col-form-label text-right">Email</label>
-                                            <div class="col-sm-10"><input class="form-control" type="email" id="text-input-vendor-email"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="text-input-vendor-reg-no" class="col-sm-2 col-form-label text-right">Reg No</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="text-input-vendor-reg-no"></div>
-                                        </div>
-                                        <div class="form-group row"><label for="select-vendor-type" class="col-sm-2 col-form-label text-right">Vendor Type<small>(For GST Only)</small></label>
-                                            <div class="col-sm-10"><select class="form-control" type="text" id="select-vendor-type"><option>Local</option></select></div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-trash"></i>&emsp;Delete</button>
+                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-edit"></i>&emsp;Update</button>
+                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
+                                                    class="fas fa-file"></i>&emsp;New</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <!--end card-body-->
                         </div>
@@ -118,19 +151,23 @@
                                 <div class="row">
                                     <div class="col-lg-12">
 
-                                        <table id="datatable" class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline" style="border-collapse: collapse; border-spacing: 0px; width: 100%;" role="grid" aria-describedby="datatable_info">
+                                        <table id="datatable"
+                                            class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
+                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
+                                            role="grid" aria-describedby="datatable_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 155.889px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Vendor Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 240.889px;" aria-label="Position: activate to sort column ascending">Phone</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 113.889px;" aria-label="Office: activate to sort column ascending">Email</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Address</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Contract Person</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Vendor Type</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" style="width: 51.8889px;" aria-label="Age: activate to sort column ascending">Reg No</th>
+                                                    <th>VendorID</th>
+                                                    <th>Vendor Name</th>
+                                                    <th>Phone</th>
+                                                    <th>Email</th>
+                                                    <th>Address</th>
+                                                    <th>Contract</th>
+                                                    <th>Vendor Type</th>
+                                                    <th>Reg No</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="vendors_body">
                                             </tbody>
                                         </table>
                                     </div>
@@ -147,7 +184,9 @@
         </div>
         <!-- end page content -->
         <footer class="footer text-center text-sm-left">
-            <div class="boxed-footer">&copy; 2020 Pharmacy <span class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/" target="_blank">Matz Solutions Pvt Ltd</a></span></div>
+            <div class="boxed-footer">&copy; 2020 Pharmacy <span
+                    class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/"
+                        target="_blank">Matz Solutions Pvt Ltd</a></span></div>
         </footer>
         <!--end footer-->
     </div>
@@ -181,6 +220,117 @@
     <script src="../assets/pages/jquery.datatable.init.js"></script>
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
+
+
+    <!-- form refresh using ajax start -->
+    <script>
+    $('#newBtn').on('click', function() {
+        ResetForm();
+    })
+    </script>
+    <!-- form refresh using ajax end -->
+
+    <!-- Phone No Validation start-->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+
+    <script>
+    $(":input").inputmask();
+
+    function checkNumber() {
+        str = document.getElementById('phone').value;
+
+        if (str.substring(0, 2) == '03') {
+            jQuery('#buttonsubmit').prop("disabled", false);
+        } else {
+            alert('Please enter correct mobile number');
+            jQuery('#buttonsubmit').prop("disabled", true);
+            return false;
+        }
+    }
+    </script>
+    <!-- Phone No Validation end-->
+
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax start-->
+    <script>
+    $(document).ready(function() {
+        getMaxId();
+        fetch_table_data();
+    });
+
+    function getMaxId() {
+        $.ajax({
+            type: 'POST',
+            url: 'getMaxIDOfTable.php',
+            data: 'columnName=' + 'VendorID' + '&tableName=' + 'vendors',
+            success: function(response) {
+                $('#vendorid').val(response);
+            }
+        })
+    }
+
+    function fetch_table_data() {
+        $.ajax({
+            url: 'get_VendorsData.php',
+            success: function(response) {
+                console.log(response);
+                $('#datatable').dataTable().fnDestroy();
+                $('#vendors_body').html(response);
+                $('#datatable').dataTable();
+            }
+        })
+    }
+    </script>
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+
+    <!-- vendors form submit using ajax -->
+    <script>
+    $('#vendorsform').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var vendorid = $('#vendorid').val();
+        var vendorname = $('#vendorname').val();
+        var responsible = $('#responsible').val();
+        var phone = $('#phone').val();
+        var address = $('#address').val();
+        var email = $('#email').val();
+        var regno = $('#regno').val();
+        var vendortype = $('#vendortype').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'vendorsubmit.php',
+            data: 'vendorid=' + vendorid + "&vendorname=" + vendorname + "&responsible=" + responsible +
+                "&phone=" + phone + "&address=" + address + "&email=" + email + "&regno=" + regno +
+                "&vendortype=" + vendortype,
+            success: function(response) {
+                // console.log(response);
+                alert(response);
+
+                ResetForm();
+                getMaxId();
+                fetch_table_data();
+            }
+        });
+
+    });
+    </script>
+
+    <!-- Reset Form without page Refresh -->
+    <script>
+    function ResetForm() {
+        // $('#vendorid').val('');
+        $('#vendorname').val('');
+        $('#responsible').val('');
+        $('#phone').val('');
+        $('#address').val('');
+        $('#email').val('');
+        $('#regno').val('');
+        $('#vendortype').val('');
+    }
+    </script>
+
+
 </body>
 
 </html>

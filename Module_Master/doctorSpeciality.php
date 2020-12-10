@@ -23,7 +23,7 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
-    label{
+    label {
         font-weight: bold;
     }
     </style>
@@ -61,35 +61,42 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Speciality ID</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="id"
-                                                    readonly></div>
+                                <form id="doctorspecialityform">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label text-right">Speciality ID</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" type="text" id="id" readonly>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group row"><label
-                                                class="col-sm-2 col-form-label text-right">Description</label>
-                                            <div class="col-sm-10"><input class="form-control" type="text" id="description">
+                                        <div class="col-lg-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label text-right">Description</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" type="text" id="description">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <br>
 
-                                <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-file"></i>&emsp;New</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-save"></i>&emsp;Save</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-edit"></i>&emsp;Update</button>
-                                        <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                class="fas fa-trash"></i>&emsp;Delete</button>
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-trash"></i>&emsp;Delete</button>
+                                            <button type="button" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-edit"></i>&emsp;Update</button>
+                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
+                                                    class="fas fa-file"></i>&emsp;New</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
+
+                                <br>
                             </div>
                             <!--end card-body-->
                         </div>
@@ -108,11 +115,11 @@
                                             style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <th style="width: 155.889px;">ID</th>
-                                                    <th style="width: 240.889px;">Description</th>
+                                                    <th>Speciality ID</th>
+                                                    <th>Description</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="speciality_body">
                                             </tbody>
                                         </table>
                                     </div>
@@ -165,6 +172,83 @@
     <script src="../assets/pages/jquery.datatable.init.js"></script>
     <!-- App js -->
     <script src="../assets/js/app.js"></script>
+
+
+    <!-- form refresh using ajax start -->
+    <script>
+    $('#newBtn').on('click', function() {
+        ResetForm();
+    })
+    </script>
+    <!-- form refresh using ajax end -->
+
+
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax start-->
+    <script>
+    $(document).ready(function() {
+        getMaxId();
+        fetch_table_data();
+    });
+
+    function getMaxId() {
+        $.ajax({
+            type: 'POST',
+            url: 'getMaxIDOfTable.php',
+            data: 'columnName=' + 'SpecialityID' + '&tableName=' + 'doctorspeciality',
+            success: function(response) {
+                $('#id').val(response);
+            }
+        })
+    }
+
+    function fetch_table_data() {
+        $.ajax({
+            url: 'get_DoctorSpecialityData.php',
+            success: function(response) {
+                console.log(response);
+                $('#datatable').dataTable().fnDestroy();
+                $('#speciality_body').html(response);
+                $('#datatable').dataTable();
+            }
+        })
+    }
+    </script>
+    <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+
+    <!-- doctorspeciality form submit using ajax -->
+    <script>
+    $('#doctorspecialityform').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var id = $('#id').val();
+        var description = $('#description').val();
+
+        $.ajax({
+            type: 'post',
+            url: 'doctorspecialitysubmit.php',
+            data: 'id=' + id + '&description=' + description,
+            success: function(response) {
+                // console.log(response);
+                alert(response);
+
+                ResetForm();
+                getMaxId();
+                fetch_table_data();
+            }
+        });
+
+    });
+    </script>
+
+    <!-- Reset Form without page Refresh -->
+    <script>
+    function ResetForm() {
+        // $('#id').val('');
+        $('#description').val('');
+    }
+    </script>
+
 </body>
 
 </html>

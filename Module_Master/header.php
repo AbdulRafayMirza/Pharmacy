@@ -72,15 +72,15 @@
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-loop"></i>Product
                                         Information</a>
                                     <ul class="submenu">
-                                        <li><a href="itemCompany.php">Item Company</a></li>
-                                        <li><a href="packingType.php">Items Packing Type</a></li>
+                                        <li><a href="itemcompany.php">Item Company</a></li>
+                                        <li><a href="packingtype.php">Items Packing Type</a></li>
                                         <li><a href="items.php">Items</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-desktop"></i>Currencies</a>
                                     <ul class="submenu">
                                         <li><a href="currencies.php">Currency</a></li>
-                                        <li><a href="currencyRates.php">Currency Rate</a></li>
+                                        <li><a href="currencyrates.php">Currency Rate</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-cup"></i>Employees
@@ -91,8 +91,8 @@
                                 </li>
                                 <li class="has-submenu"><a href="javascript:;"><i class="ti-server"></i>Extra</a>
                                     <ul class="submenu">
-                                        <li><a href="doctorSpeciality.php">Doctor Speciality</a></li>
-                                        <li><a href="doctorProfile.php">Doctor Profile</a></li>
+                                        <li><a href="doctorspeciality.php">Doctor Speciality</a></li>
+                                        <li><a href="doctorprofile.php">Doctor Profile</a></li>
                                         <li><a href="othercompanies.php">Other Companies</a></li>
                                     </ul>
                                 </li>

@@ -1,0 +1,14 @@
+<?php
+include_once('../conn.php');
+    
+$sql = 'SELECT * FROM packingtype';
+    $result = mysqli_query($conn,$sql);
+    while($row = mysqli_fetch_assoc($result)){
+        echo'
+        <tr>
+            <td>'.$row['PackingID'].'</td>
+            <td>'.$row['PackingType'].'</td>
+            <td>'.$row['Description'].'</td>
+        </tr>';
+    }
+?>
