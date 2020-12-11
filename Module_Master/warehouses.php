@@ -97,9 +97,9 @@ include_once('../conn.php');
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" disabled id="delbtn" class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" disabled id="updbtn" class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
                                             <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-save"></i>&emsp;Save</button>
@@ -121,10 +121,8 @@ include_once('../conn.php');
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <table id="datatable"
-                                            class="table table-bordered dt-responsive nowrap dataTable no-footer dtr-inline"
-                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;"
-                                            role="grid" aria-describedby="datatable_info">
+                                        <table id="datatable" class="table table-bordered"
+                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
                                             <thead>
                                                 <tr role="row">
                                                     <th>Wahrehouse ID</th>
@@ -269,6 +267,21 @@ include_once('../conn.php');
         $('#warehousecity').val('');
     }
     </script>
+
+    <!-- Row Update & Delete Without Refreshing Page Start -->
+    <script>
+    function rowselect(id) {
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgba(0,0,0,.05)'
+            tr.style.color = 'rgba(0,0,0)';
+        });
+
+        $('#delbtn').prop('disabled', false);
+        $('#updbtn').prop('disabled', false);
+        $("#" + id).css('background', 'rgba(0,0,0,.35)');
+    }
+    </script>
+    <!-- Row Update & Delete Without Refreshing Page end -->
 
 </body>
 
