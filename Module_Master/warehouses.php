@@ -97,11 +97,13 @@ include_once('../conn.php');
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="submit" disabled id="delbtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="button" disabled id="delbtn"
+                                                class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled id="updbtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" disabled id="updbtn"
+                                                class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
-                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-save"></i>&emsp;Save</button>
                                             <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
                                                     class="fas fa-file"></i>&emsp;New</button>
@@ -189,6 +191,7 @@ include_once('../conn.php');
 
     <!-- form refresh using ajax start -->
     <script>
+    var selectedId = -1;
     $('#newBtn').on('click', function() {
         ResetForm();
     })
@@ -265,21 +268,65 @@ include_once('../conn.php');
         $('#address').val('');
         $('#warehousename').val('');
         $('#warehousecity').val('');
+
+
+        getMaxId();
+        selectedId = -1;
+
+        $('#delbtn').prop('disabled', true);
+        $('#updbtn').prop('disabled', true);
+        $('#savebtn').prop('disabled', false);
+
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
+        });
+
     }
     </script>
 
     <!-- Row Update & Delete Without Refreshing Page Start -->
     <script>
+
     function rowselect(id) {
         $('#datatable > tbody  > tr').each(function(index, tr) {
-            tr.style.background = 'rgba(0,0,0,.05)'
-            tr.style.color = 'rgba(0,0,0)';
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
         });
 
+        selectedId = id;
+        
         $('#delbtn').prop('disabled', false);
         $('#updbtn').prop('disabled', false);
+        $('#savebtn').prop('disabled', true);
+
         $("#" + id).css('background', 'rgba(0,0,0,.35)');
+        $("#" + id).css('color', 'rgb(0,0,0)');
+
+        $("#warehouseid").val(id);
+        $("#warehousename").val($("#" + id).data('name'));
+        $("#address").html($("#" + id).data('address'));
+        $("#warehousecity").val($("#" + id).data('city'));
     }
+
+
+    $('#delbtn').click(function() {
+        var r = confirm("Are you sure you want to delete this warehouse - " + $("#" + selectedId).data('name') + "?");
+        if (r == true) {
+            $.ajax({
+                type: 'post',
+                url: 'deleteDataFromTable.php',
+                data: 'tableName=' + 'warehouses' + "&columnName=" + 'WarehouseId' + "&dataId=" + selectedId,
+                success: function(response) {
+                    // console.log(response);
+                    ResetForm();
+                    getMaxId();
+                    fetch_table_data();
+                    alert(response);
+                }
+            });
+        }
+    })
     </script>
     <!-- Row Update & Delete Without Refreshing Page end -->
 
