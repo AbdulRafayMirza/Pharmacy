@@ -152,13 +152,13 @@ include_once('../conn.php');
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="button" id="delbtn" disabled class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" id="updbtn" disabled class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
-                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                    class="fas fa-save" id="buttonsubmit"></i>&emsp;Save</button>
-                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
                                                     class="fas fa-file"></i>&emsp;New</button>
                                         </div>
                                     </div>
@@ -249,6 +249,7 @@ include_once('../conn.php');
 
     <!-- Print Excel File functionality start -->
     <script>
+    var selectedId = -1;
     $(document).ready(function() {
         $('#datatable').dataTable().fnDestroy();
         initializeDatatable();
@@ -388,7 +389,73 @@ include_once('../conn.php');
         $('#class').val('');
         $('#remarks').val('');
         $('#regdate').val('');
+        
+        getMaxId();
+        selectedId = -1;
+
+        $('#delbtn').prop('disabled', true);
+        $('#updbtn').prop('disabled', true);
+        $('#savebtn').prop('disabled', false);
+
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
+        });
     }
+    </script>
+
+    
+    <!-- Selected Row Delete Without Refreshing Page Start -->
+    <script>
+
+    function rowselect(id) {
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
+        });
+
+        selectedId = id;
+        
+        $('#delbtn').prop('disabled', false);
+        $('#updbtn').prop('disabled', false);
+        $('#savebtn').prop('disabled', true);
+
+        $("#" + id).css('background', 'rgba(0,0,0,.35)');
+        $("#" + id).css('color', 'rgb(0,0,0)');
+
+        $('#customerid').val(id);
+        $('#customer_name').val($("#" + id).data('name'));
+        $('#customer_category').val($("#" + id).data('category'));
+        $('#customer_type').val($("#" + id).data('type'));
+        $('#phone').val($("#" + id).data('phone'));
+        $('#address').val($("#" + id).data('address'));
+        $('#email').val($("#" + id).data('email'));
+        $('#class').val($("#" + id).data('class'));
+        $('#remarks').val($("#" + id).data('remarks'));
+        $('#regdate').val($("#" + id).data('regdate'));
+    }
+
+    // Delete functionality start
+    $('#delbtn').click(function() {
+        var r = confirm("Are you sure you want to delete this Customer - " + $("#" + selectedId).data('name') + "?");
+        if (r == true) {
+            $.ajax({
+                type: 'post',
+                url: 'deleteDataFromTable.php',
+                data: 'tableName=' + 'customers' + "&columnName=" + 'CusotmerID' + "&dataId=" + selectedId,
+                success: function(response) {
+                    // console.log(response);
+                    
+                    ResetForm();
+                    getMaxId();
+                    fetch_table_data();
+                    alert(response);
+                }
+            });
+        }
+    })
+    // Delete functionality end
+
     </script>
 </body>
 
