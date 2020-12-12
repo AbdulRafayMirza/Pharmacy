@@ -23,9 +23,9 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <style>
-    label {
-        font-weight: bold;
-    }
+        label {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -64,29 +64,21 @@
                                 <form id="employeesform">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Employee ID</label>
-                                                <div class="col-sm-8"><input class="form-control" type="text"
-                                                        id="employeeid" name="employeeid" readonly></div>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Employee ID</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="employeeid" name="employeeid" readonly></div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Name</label>
-                                                <div class="col-sm-8"><input class="form-control" type="text"
-                                                        id="employeename" name="employeename"></div>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Name</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="employeename" name="employeename"></div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Father Name</label>
-                                                <div class="col-sm-8"><input class="form-control" type="text"
-                                                        id="fathername" name="fathername"></div>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Father Name</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" id="fathername" name="fathername"></div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">DOB</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">DOB</label>
                                                 <div class="col-sm-8">
                                                     <input class="form-control" type="date" id="dob" name="dob">
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Gender</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Gender</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-control" id="gender" name="gender">
                                                         <option>Select Gender</option>
@@ -95,8 +87,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Marital Status</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Marital Status</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-control" id="status" name="status">
                                                         <option>Select marital Status</option>
@@ -105,8 +96,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Blood Group</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Blood Group</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-control" id="bloodgroup" name="bloodgroup">
                                                         <option selected disabled>Select Blood Group</option>
@@ -121,18 +111,15 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Address</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Address</label>
                                                 <div class="col-sm-8">
-                                                    <div class="form-group"><textarea class="form-control" rows="3"
-                                                            style="resize:none" id="address" name="address"></textarea>
+                                                    <div class="form-group"><textarea class="form-control" rows="3" style="resize:none" id="address" name="address"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Designation</label>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Designation</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-control" id="designation" name="designation">
                                                         <option selected disabled>Select Designation</option>
@@ -146,43 +133,28 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Salary</label>
-                                                <div class="col-sm-8"><input class="form-control" type="number"
-                                                        value="0" id="salary" name="salary"></div>
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Salary</label>
+                                                <div class="col-sm-8"><input class="form-control" type="number" value="0" id="salary" name="salary"></div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Official Contact</label>
-                                                <div class="col-sm-8"><input class="form-control" type="text"
-                                                        data-inputmask="'mask': '9999-9999999'" id="officialcontact"
-                                                        name="officialcontact" onchange="checkofficialNumber();"
-                                                        placeholder="e.g. 0300-0000000">
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Official Contact</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" data-inputmask="'mask': '9999-9999999'" id="officialcontact" name="officialcontact" onchange="checkofficialNumber();" placeholder="e.g. 0300-0000000">
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Personal Contact</label>
-                                                <div class="col-sm-8"><input class="form-control" type="text"
-                                                        data-inputmask="'mask': '9999-9999999'" id="personalcontact"
-                                                        name="personalcontact" onchange="checkpersonalNumber();"
-                                                        placeholder="e.g. 0300-0000000">
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Personal Contact</label>
+                                                <div class="col-sm-8"><input class="form-control" type="text" data-inputmask="'mask': '9999-9999999'" id="personalcontact" name="personalcontact" onchange="checkpersonalNumber();" placeholder="e.g. 0300-0000000">
                                                 </div>
                                             </div>
-                                            <div class="form-group row"><label
-                                                    class="col-sm-4 col-form-label text-right">Email</label>
-                                                <div class="col-sm-8"><input class="form-control" type="email"
-                                                        id="email" name="email">
+                                            <div class="form-group row"><label class="col-sm-4 col-form-label text-right">Email</label>
+                                                <div class="col-sm-8"><input class="form-control" type="email" id="email" name="email">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label text-right">Image</label>
-                                                <div class="col-sm-8"><input class="form-control" type="file"
-                                                        accept="image/*" id="image" name="image"></div>
+                                                <div class="col-sm-8"><input class="form-control" type="file" accept="image/*" id="image" name="image"></div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-9 col-form-label text-right">
-                                                    <input class="form-control" type="checkbox"
-                                                        style="height: 15px; width: 15px; display: inline-block;"
-                                                        id="active" name="active" value="1">&emsp;Active</label>
+                                                    <input class="form-control" type="checkbox" style="height: 15px; width: 15px; display: inline-block;" id="active" name="active" value="1">&emsp;Active</label>
                                             </div>
                                         </div>
                                         <div class="col-lg-1">
@@ -190,32 +162,19 @@
                                         <div class="col-lg-4">
                                             <fieldset style="border: 1px solid silver; padding: 10px;">
                                                 <legend>Guarantor</legend>
-                                                <div class="form-group row"><label
-                                                        class="col-sm-3 col-form-label text-right">Name</label>
-                                                    <div class="col-sm-9"><input class="form-control" type="text"
-                                                            id="guarantorname" name="guarantorname"></div>
+                                                <div class="form-group row"><label class="col-sm-3 col-form-label text-right">Name</label>
+                                                    <div class="col-sm-9"><input class="form-control" type="text" id="guarantorname" name="guarantorname"></div>
                                                 </div>
-                                                <div class="form-group row"><label
-                                                        class="col-sm-3 col-form-label text-right">Address</label>
-                                                    <div class="col-sm-9"><input class="form-control" type="text"
-                                                            id="guarantoraddress" name="guarantoraddress"></div>
+                                                <div class="form-group row"><label class="col-sm-3 col-form-label text-right">Address</label>
+                                                    <div class="col-sm-9"><input class="form-control" type="text" id="guarantoraddress" name="guarantoraddress"></div>
                                                 </div>
-                                                <div class="form-group row"><label
-                                                        class="col-sm-3 col-form-label text-right">Contact</label>
-                                                    <div class="col-sm-9"><input class="form-control" type="text"
-                                                            data-inputmask="'mask': '9999-9999999'"
-                                                            id="guarantorcontact" name="guarantorcontact"
-                                                            onchange="checkNumber();" placeholder="e.g. 0300-0000000">
+                                                <div class="form-group row"><label class="col-sm-3 col-form-label text-right">Contact</label>
+                                                    <div class="col-sm-9"><input class="form-control" type="text" data-inputmask="'mask': '9999-9999999'" id="guarantorcontact" name="guarantorcontact" onchange="checkNumber();" placeholder="e.g. 0300-0000000">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row"><label
-                                                        class="col-sm-3 col-form-label text-right">NIC</label>
+                                                <div class="form-group row"><label class="col-sm-3 col-form-label text-right">NIC</label>
                                                     <div class="col-sm-9">
-                                                        <input class="form-control" type="text"
-                                                            data-inputmask="'mask': '99999-9999999-9'"
-                                                            onchange="checkCNIC();" class="form-control"
-                                                            placeholder="e.g. 41111-1111111-1" id="guarantornic"
-                                                            name="guarantornic">
+                                                        <input class="form-control" type="text" data-inputmask="'mask': '99999-9999999-9'" onchange="checkCNIC();" class="form-control" placeholder="e.g. 41111-1111111-1" id="guarantornic" name="guarantornic">
                                                     </div>
                                                 </div>
                                             </fieldset>
@@ -224,14 +183,10 @@
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                    class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
-                                                    class="fas fa-edit"></i>&emsp;Update</button>
-                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"><i
-                                                    class="fas fa-save" id="buttonsubmit"></i>&emsp;Save</button>
-                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
-                                                    class="fas fa-file"></i>&emsp;New</button>
+                                            <button type="button" id="delbtn" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-trash"></i>&emsp;Delete</button>
+                                            <button type="submit" id="updbtn" disabled class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-edit"></i>&emsp;Update</button>
+                                            <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i class="fas fa-save" id="buttonsubmit"></i>&emsp;Save</button>
+                                            <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i class="fas fa-file"></i>&emsp;New</button>
                                         </div>
                                     </div>
                                 </form>
@@ -249,8 +204,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 table-responsive">
 
-                                        <table id="datatable" class="table table-bordered "
-                                            style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
+                                        <table id="datatable" class="table table-bordered " style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
                                             <thead>
                                                 <tr role="row">
                                                     <th>Employee Name</th>
@@ -284,9 +238,7 @@
         </div>
         <!-- end page content -->
         <footer class="footer text-center text-sm-left">
-            <div class="boxed-footer">&copy; 2020 Pharmacy <span
-                    class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/"
-                        target="_blank">Matz Solutions Pvt Ltd</a></span></div>
+            <div class="boxed-footer">&copy; 2020 Pharmacy <span class="text-muted d-none d-sm-inline-block float-right">Powered by <a href="https://matz.group/" target="_blank">Matz Solutions Pvt Ltd</a></span></div>
         </footer>
         <!--end footer-->
     </div>
@@ -324,9 +276,10 @@
 
     <!-- form refresh using ajax start -->
     <script>
-    $('#newBtn').on('click', function() {
-        ResetForm();
-    })
+        var selectedId = -1;
+        $('#newBtn').on('click', function() {
+            ResetForm();
+        })
     </script>
     <!-- form refresh using ajax end -->
 
@@ -334,164 +287,248 @@
     <!-- "Official Contact Number" Validation start-->
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
     <script>
-    $(":input").inputmask();
+        $(":input").inputmask();
 
-    function checkofficialNumber() {
-        str = document.getElementById('officialcontact').value;
+        function checkofficialNumber() {
+            str = document.getElementById('officialcontact').value;
 
-        if (str.substring(0, 2) == '03') {
-            jQuery('#buttonsubmit').prop("disabled", false);
-        } else {
-            alert('Please Enter Correct Official Contact Number');
-            jQuery('#buttonsubmit').prop("disabled", true);
-            return false;
+            if (str.substring(0, 2) == '03') {
+                jQuery('#buttonsubmit').prop("disabled", false);
+            } else {
+                alert('Please Enter Correct Official Contact Number');
+                jQuery('#buttonsubmit').prop("disabled", true);
+                return false;
+            }
         }
-    }
     </script>
     <!--"Official Contact Number" Validation end-->
 
     <!-- "Personal Contact Number" Validation start-->
     <script>
-    $(":input").inputmask();
+        $(":input").inputmask();
 
-    function checkpersonalNumber() {
-        str = document.getElementById('personalcontact').value;
+        function checkpersonalNumber() {
+            str = document.getElementById('personalcontact').value;
 
-        if (str.substring(0, 2) == '03') {
-            jQuery('#buttonsubmit').prop("disabled", false);
-        } else {
-            alert('Please Enter Correct Personal Contact Number');
-            jQuery('#buttonsubmit').prop("disabled", true);
-            return false;
+            if (str.substring(0, 2) == '03') {
+                jQuery('#buttonsubmit').prop("disabled", false);
+            } else {
+                alert('Please Enter Correct Personal Contact Number');
+                jQuery('#buttonsubmit').prop("disabled", true);
+                return false;
+            }
         }
-    }
     </script>
     <!--"Personal Contact Number" Validation end-->
 
     <!-- "Guarantor Contact Number" Validation start-->
     <script>
-    $(":input").inputmask();
+        $(":input").inputmask();
 
-    function checkNumber() {
-        str = document.getElementById('guarantorcontact').value;
+        function checkNumber() {
+            str = document.getElementById('guarantorcontact').value;
 
-        if (str.substring(0, 2) == '03') {
-            jQuery('#buttonsubmit').prop("disabled", false);
-        } else {
-            alert('Please Enter Contact Number');
-            jQuery('#buttonsubmit').prop("disabled", true);
-            return false;
+            if (str.substring(0, 2) == '03') {
+                jQuery('#buttonsubmit').prop("disabled", false);
+            } else {
+                alert('Please Enter Contact Number');
+                jQuery('#buttonsubmit').prop("disabled", true);
+                return false;
+            }
         }
-    }
     </script>
     <!--"Guarantor Contact Number" Validation end-->
 
     <!--"CNIC Validation start-->
     <script>
-    $(":input").inputmask();
+        $(":input").inputmask();
 
-    function checkCNIC() {
-        var flag = false;
-        regexp = /^(?!000|666)[0-8][0-9]{4}-(?!00)[0-9]{7}-(?!0000)[0-9]{1}$/;
-        str = document.getElementById('guarantornic').value;
-        if (regexp.test(str)) {
-            jQuery('#submitbutton').prop("disabled", false);
+        function checkCNIC() {
+            var flag = false;
+            regexp = /^(?!000|666)[0-8][0-9]{4}-(?!00)[0-9]{7}-(?!0000)[0-9]{1}$/;
+            str = document.getElementById('guarantornic').value;
+            if (regexp.test(str)) {
+                jQuery('#submitbutton').prop("disabled", false);
 
-        } else {
-            alert('Please enter correct CNIC number');
-            jQuery('#submitbutton').prop("disabled", true);
-            return false;
+            } else {
+                alert('Please enter correct CNIC number');
+                jQuery('#submitbutton').prop("disabled", true);
+                return false;
+            }
         }
-    }
     </script>
     <!--"CNIC Validation end-->
 
 
     <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax start-->
     <script>
-    $(document).ready(function() {
-        getMaxId();
-        fetch_table_data();
-    });
+        $(document).ready(function() {
+            getMaxId();
+            fetch_table_data();
+        });
 
-    function getMaxId() {
-        $.ajax({
-            type: 'POST',
-            url: 'getMaxIDOfTable.php',
-            data: 'columnName=' + 'EmployeeID' + '&tableName=' + 'employees',
-            success: function(response) {
-                $('#employeeid').val(response);
-            }
-        })
-    }
+        function getMaxId() {
+            $.ajax({
+                type: 'POST',
+                url: 'getMaxIDOfTable.php',
+                data: 'columnName=' + 'EmployeeID' + '&tableName=' + 'employees',
+                success: function(response) {
+                    $('#employeeid').val(response);
+                }
+            })
+        }
 
-    function fetch_table_data() {
-        $.ajax({
-            url: 'get_EmployeesData.php',
-            success: function(response) {
-                console.log(response);
-                $('#datatable').dataTable().fnDestroy();
-                $('#employees_body').html(response);
-                $('#datatable').dataTable();
+        function fetch_table_data() {
+            $.ajax({
+                url: 'get_EmployeesData.php',
+                success: function(response) {
+                    console.log(response);
+                    $('#datatable').dataTable().fnDestroy();
+                    $('#employees_body').html(response);
+                    $('#datatable').dataTable();
 
-            }
-        })
-    }
+                }
+            })
+        }
     </script>
     <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+    <script>
+        function rowselect(id) {
+            $('#datatable > tbody  > tr').each(function(index, tr) {
+                tr.style.background = 'rgb(255,255,255)'
+                tr.style.color = '#869ab8';
+            });
 
+            selectedId = id;
+
+            $('#delbtn').prop('disabled', false);
+            $('#updbtn').prop('disabled', false);
+            $('#savebtn').prop('disabled', true);
+
+            $("#" + id).css('background', 'rgba(0,0,0,.35)');
+            $("#" + id).css('color', 'rgb(0,0,0)');
+
+            $("#employeeid").val(id);
+            $("#employeename").val($("#" + id).data('name'));
+            $("#fathername").val($("#" + id).data('father-name'));
+            $("#dob").val($("#" + id).data('dob'));
+            $("#gender").val($("#" + id).data('gender'));
+            $("#status").val($("#" + id).data('status'));
+            $("#bloodgroup").val($("#" + id).data('blood-group'));
+            $("#address").html($("#" + id).data('address'));
+            $("#designation").val($("#" + id).data('designation'));
+            $("#salary").val($("#" + id).data('salary'));
+            $("#officialcontact").val($("#" + id).data('official-contact'));
+            $("#personalcontact").val($("#" + id).data('personal-contact'));
+            $("#email").val($("#" + id).data('email'));
+            // $("#image").val($("#" + id).data('image'));
+            if ($("#" + id).data('active') == '1')
+                $("#active").attr('checked', true);
+            $("#guarantorname").val($("#" + id).data('guarantor-name'));
+            $("#guarantoraddress").val($("#" + id).data('guarantor-address'));
+            $("#guarantorcontact").val($("#" + id).data('guarantor-contact'));
+            $("#guarantornic").val($("#" + id).data('guarantor-cnic'));
+
+
+
+
+            /* <tr id="1" onclick="rowselect(1);" data-name="Rawaha Bin Khalid" 
+            data-father-name="Khalid Naeem" data-dob="1997-09-23" 
+            data-gender="Male" data-status="Single" data-blood-group="B+" 
+            data-address="A-1" data-designation="Manager" data-salary="50000" 
+            data-official-contact="0333-2175584" 
+            data-personal-contact="0333-2175584" 
+            data-email="rawahabinkhalid@gmail.com" data-image="Quartz.jpg" 
+            data-active="1" data-guarantor-name="Rawaha Bin Khalid" 
+            data-guarantor-address="A-1" data-guarantor-contact="0333-2175584" 
+            data-guarantor-cnic="42201-6085618-5">*/
+        }
+    </script>
 
     <!-- Employees form submit using ajax -->
     <script>
-    $('#employeesform').on('submit', function(e) {
+        $('#employeesform').on('submit', function(e) {
 
-        e.preventDefault();
+            e.preventDefault();
 
-        $.ajax({
-            type: 'POST',
-            url: 'employeesubmit.php',
+            $.ajax({
+                type: 'POST',
+                url: 'employeesubmit.php',
 
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            
-            success: function(response) {
-                // console.log(response);
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
 
-                ResetForm();
-                getMaxId();
-                fetch_table_data();
-            },
+                success: function(response) {
+                    // console.log(response);
 
+                    ResetForm();
+                    getMaxId();
+                    fetch_table_data();
+                },
+
+            });
         });
-    });
     </script>
 
     <!-- Reset Form without page Refresh -->
     <script>
-    function ResetForm() {
-        // $('#employeeid').val('');
-        $('#employeename').val('');
-        $('#fathername').val('');
-        $('#dob').val('');
-        $('#gender').val('');
-        $('#status').val('');
-        $('#bloodgroup').val('');
-        $('#address').val('');
-        $('#designation').val('');
-        $('#salary').val('0');
-        $('#officialcontact').val('');
-        $('#personalcontact').val('');
-        $('#email').val('');
-        $('#image').val('');
-        // $('#active').val('');
+        function ResetForm() {
+            // $('#employeeid').val('');
+            $('#employeename').val('');
+            $('#fathername').val('');
+            $('#dob').val('');
+            $('#gender').val('');
+            $('#status').val('');
+            $('#bloodgroup').val('');
+            $('#address').val('');
+            $('#designation').val('');
+            $('#salary').val('0');
+            $('#officialcontact').val('');
+            $('#personalcontact').val('');
+            $('#email').val('');
+            $('#image').val('');
+            $('#active').attr('checked', false);
 
-        $('#guarantorname').val('');
-        $('#guarantoraddress').val('');
-        $('#guarantorcontact').val('');
-        $('#guarantornic').val('');
-    }
+            $('#guarantorname').val('');
+            $('#guarantoraddress').val('');
+            $('#guarantorcontact').val('');
+            $('#guarantornic').val('');
+
+
+            $('#delbtn').prop('disabled', true);
+            $('#updbtn').prop('disabled', true);
+            $('#savebtn').prop('disabled', false);
+
+            getMaxId();
+            selectedId = -1;
+
+
+            $('#datatable > tbody  > tr').each(function(index, tr) {
+                tr.style.background = 'rgb(255,255,255)'
+                tr.style.color = '#869ab8';
+            });
+        }
+
+        $('#delbtn').click(function() {
+            var r = confirm("Are you sure you want to delete this employee - " + $("#" + selectedId).data('name') + "?");
+            console.log('tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId)
+            if (r == true) {
+                $.ajax({
+                    type: 'post',
+                    url: 'deleteDataFromTable.php',
+                    data: 'tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId,
+                    success: function(response) {
+                        console.log(response);
+                        ResetForm();
+                        getMaxId();
+                        fetch_table_data();
+                        alert(response);
+                    }
+                });
+            }
+        })
     </script>
 
 </body>
