@@ -392,6 +392,7 @@
         }
     </script>
     <!-- Refresh page using ajax , get autoincrement/MaxId , get table data using ajax end-->
+    
     <script>
         function rowselect(id) {
             $('#datatable > tbody  > tr').each(function(index, tr) {
@@ -429,20 +430,26 @@
             $("#guarantorcontact").val($("#" + id).data('guarantor-contact'));
             $("#guarantornic").val($("#" + id).data('guarantor-cnic'));
 
-
-
-
-            /* <tr id="1" onclick="rowselect(1);" data-name="Rawaha Bin Khalid" 
-            data-father-name="Khalid Naeem" data-dob="1997-09-23" 
-            data-gender="Male" data-status="Single" data-blood-group="B+" 
-            data-address="A-1" data-designation="Manager" data-salary="50000" 
-            data-official-contact="0333-2175584" 
-            data-personal-contact="0333-2175584" 
-            data-email="rawahabinkhalid@gmail.com" data-image="Quartz.jpg" 
-            data-active="1" data-guarantor-name="Rawaha Bin Khalid" 
-            data-guarantor-address="A-1" data-guarantor-contact="0333-2175584" 
-            data-guarantor-cnic="42201-6085618-5">*/
         }
+
+        $('#delbtn').click(function() {
+            var r = confirm("Are you sure you want to delete this employee - " + $("#" + selectedId).data('name') + "?");
+            console.log('tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId)
+            if (r == true) {
+                $.ajax({
+                    type: 'post',
+                    url: 'deleteDataFromTable.php',
+                    data: 'tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId,
+                    success: function(response) {
+                        console.log(response);
+                        ResetForm();
+                        getMaxId();
+                        fetch_table_data();
+                        alert(response);
+                    }
+                });
+            }
+        })
     </script>
 
     <!-- Employees form submit using ajax -->
@@ -510,25 +517,6 @@
                 tr.style.color = '#869ab8';
             });
         }
-
-        $('#delbtn').click(function() {
-            var r = confirm("Are you sure you want to delete this employee - " + $("#" + selectedId).data('name') + "?");
-            console.log('tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId)
-            if (r == true) {
-                $.ajax({
-                    type: 'post',
-                    url: 'deleteDataFromTable.php',
-                    data: 'tableName=' + 'employees' + "&columnName=" + 'EmployeeID' + "&dataId=" + selectedId,
-                    success: function(response) {
-                        console.log(response);
-                        ResetForm();
-                        getMaxId();
-                        fetch_table_data();
-                        alert(response);
-                    }
-                });
-            }
-        })
     </script>
 
 </body>

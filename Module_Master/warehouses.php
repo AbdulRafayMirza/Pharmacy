@@ -97,10 +97,10 @@ include_once('../conn.php');
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="button" disabled id="delbtn"
+                                            <button type="button" id="delbtn" disabled
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="button" disabled id="updbtn"
+                                            <button type="submit" id="updbtn" disabled
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
                                             <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
@@ -285,7 +285,7 @@ include_once('../conn.php');
     }
     </script>
 
-    <!-- Row Update & Delete Without Refreshing Page Start -->
+    <!-- Selected Row Delete Without Refreshing Page Start -->
     <script>
 
     function rowselect(id) {
@@ -305,7 +305,7 @@ include_once('../conn.php');
 
         $("#warehouseid").val(id);
         $("#warehousename").val($("#" + id).data('name'));
-        $("#address").html($("#" + id).data('address'));
+        $("#address").val($("#" + id).data('address'));
         $("#warehousecity").val($("#" + id).data('city'));
     }
 
@@ -330,16 +330,8 @@ include_once('../conn.php');
     })
     // Delete functionality end
 
-    $('#updbtn').click(function(){
-        $.ajax({
-            type: 'post',
-            url : 'warehousesubmit.php',
-            data : ''
-        })
-    })
-
     </script>
-    <!-- Row Update & Delete Without Refreshing Page end -->
+    <!-- Selected Row Delete Without Refreshing Page end -->
 
 </body>
 

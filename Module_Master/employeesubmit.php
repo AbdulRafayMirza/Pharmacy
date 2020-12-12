@@ -22,6 +22,7 @@ $guarantorname = $_POST['guarantorname'];
 $guarantoraddress = $_POST['guarantoraddress'];
 $guarantorcontact = $_POST['guarantorcontact'];
 $guarantornic = $_POST['guarantornic'];
+
 $sqlSearchEmployee = 'SELECT * FROM employees WHERE EmployeeID = ' . $employeeid;
 $resultSearchEmployee = $conn->query($sqlSearchEmployee);
 if($resultSearchEmployee->num_rows <= 0) {
@@ -44,7 +45,8 @@ if($resultSearchEmployee->num_rows <= 0) {
     else{
         echo $sql;
     }
-} else {
+} 
+else {
     if(isset($image['name']) && $image['name'] != '') {
         $sql = 'UPDATE employees SET `EmployeeName` = "'.$employeename.'", `FatherName` = "'.$fathername.'", `Dob` = "'.$dob.'", 
         `Gender` = "'.$gender.'", `Status` = "'.$status.'", `BloodGroup` = "'.$bloodgroup.'", 

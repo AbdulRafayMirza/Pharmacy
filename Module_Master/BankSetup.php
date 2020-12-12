@@ -108,12 +108,14 @@ include_once('../conn.php');
 
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="button" id="delbtn" disabled
+                                                class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled class="btn btn-primary px-5 py-2 mr-2"><i
+                                            <button type="submit" id="updbtn" disabled
+                                                class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
-                                            <button type="submit" class="btn btn-primary px-5 py-2 mr-2"
-                                                id="buttonsubmit"><i class="fas fa-save"></i>&emsp;Save</button>
+                                            <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
+                                                    class="fas fa-save"></i>&emsp;Save</button>
                                             <button type="button" id="newBtn" class="btn btn-primary px-5 py-2"><i
                                                     class="fas fa-file"></i>&emsp;New</button>
                                         </div>
@@ -204,6 +206,7 @@ include_once('../conn.php');
 
     <!-- form refresh using ajax start -->
     <script>
+    var selectedId = -1;
     $('#newBtn').on('click', function() {
         ResetForm();
     })
@@ -221,10 +224,10 @@ include_once('../conn.php');
         str = document.getElementById('contact').value;
 
         if (str.substring(0, 2) == '03') {
-            jQuery('#buttonsubmit').prop("disabled", false);
+            jQuery('#savebtn').prop("disabled", false);
         } else {
             alert('Please enter correct mobile number');
-            jQuery('#buttonsubmit').prop("disabled", true);
+            jQuery('#savebtn').prop("disabled", true);
             return false;
         }
     }
@@ -303,7 +306,67 @@ include_once('../conn.php');
         $('#contact').val('');
         $('#accountnumber').val('');
     }
+
+    getMaxId();
+    selectedId = -1;
+
+    $('#delbtn').prop('disabled', true);
+    $('#updbtn').prop('disabled', true);
+    $('#savebtn').prop('disabled', false);
+
+    $('#datatable > tbody  > tr').each(function(index, tr) {
+        tr.style.background = 'rgb(255,255,255)'
+        tr.style.color = '#869ab8';
+    });
     </script>
+
+    <!-- Row Update & Delete Without Refreshing Page Start -->
+    <script>
+    function rowselect(id) {
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
+        });
+
+        selectedId = id;
+
+        $('#delbtn').prop('disabled', false);
+        $('#updbtn').prop('disabled', false);
+        $('#savebtn').prop('disabled', true);
+
+        $("#" + id).css('background', 'rgba(0,0,0,.35)');
+        $("#" + id).css('color', 'rgb(0,0,0)');
+
+        $('#Id').val(id);
+        $('#name').val($("#" + id).data('name'));
+        $('#address').val($("#" + id).data('address'));
+        $('#contact').val($("#" + id).data('contact'));
+        $('#accountnumber').val($("#" + id).data('accountnumber'));
+
+    }
+
+    // Delete functionality start
+    $('#delbtn').click(function() {
+        var r = confirm("Are you sure you want to delete this Bank - " + $("#" + selectedId).data('name') + "?");
+        if (r == true) {
+            $.ajax({
+                type: 'post',
+                url: 'deleteDataFromTable.php',
+                data: 'tableName=' + 'banksetup' + "&columnName=" + 'BankID' + "&dataId=" + selectedId,
+                success: function(response) {
+                    // console.log(response);
+
+                    ResetForm();
+                    getMaxId();
+                    fetch_table_data();
+                    alert(response);
+                }
+            });
+        }
+    })
+    // Delete functionality end
+    </script>
+    <!-- Row Update & Delete Without Refreshing Page end -->
 
 </body>
 
