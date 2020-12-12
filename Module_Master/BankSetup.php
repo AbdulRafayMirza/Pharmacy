@@ -248,6 +248,7 @@ include_once('../conn.php');
             data: 'columnName=' + 'BankID' + '&tableName=' + 'banksetup',
             success: function(response) {
                 $('#Id').val(response);
+                console.log(response)
             }
         })
 
@@ -305,19 +306,19 @@ include_once('../conn.php');
         $('#address').val('');
         $('#contact').val('');
         $('#accountnumber').val('');
+
+        getMaxId();
+        selectedId = -1;
+
+        $('#delbtn').prop('disabled', true);
+        $('#updbtn').prop('disabled', true);
+        $('#savebtn').prop('disabled', false);
+
+        $('#datatable > tbody  > tr').each(function(index, tr) {
+            tr.style.background = 'rgb(255,255,255)'
+            tr.style.color = '#869ab8';
+        });
     }
-
-    getMaxId();
-    selectedId = -1;
-
-    $('#delbtn').prop('disabled', true);
-    $('#updbtn').prop('disabled', true);
-    $('#savebtn').prop('disabled', false);
-
-    $('#datatable > tbody  > tr').each(function(index, tr) {
-        tr.style.background = 'rgb(255,255,255)'
-        tr.style.color = '#869ab8';
-    });
     </script>
 
     <!-- Row Update & Delete Without Refreshing Page Start -->
@@ -347,7 +348,8 @@ include_once('../conn.php');
 
     // Delete functionality start
     $('#delbtn').click(function() {
-        var r = confirm("Are you sure you want to delete this Bank - " + $("#" + selectedId).data('name') + "?");
+        var r = confirm("Are you sure you want to delete this Bank - " + $("#" + selectedId).data('name') +
+        "?");
         if (r == true) {
             $.ajax({
                 type: 'post',
