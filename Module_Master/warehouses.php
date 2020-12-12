@@ -76,7 +76,7 @@ include_once('../conn.php');
                                                     class="col-sm-2 col-form-label text-right">Address</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-group"><textarea class="form-control" rows="5"
-                                                            style="resize:none" id="address" required></textarea>
+                                                            style="resize:none" id="addressTA" required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +100,7 @@ include_once('../conn.php');
                                             <button type="button" id="delbtn" disabled
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" id="updbtn" disabled
+                                            <button type="submit" disabled id="updbtn"
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
                                             <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
@@ -127,7 +127,7 @@ include_once('../conn.php');
                                             style="border-collapse: collapse; border-spacing: 0px; width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>Wahrehouse ID</th>
+                                                    <th>Warehouse ID</th>
                                                     <th>Warehouse Name</th>
                                                     <th>Address</th>
                                                     <th>City</th>
@@ -238,10 +238,10 @@ include_once('../conn.php');
 
         e.preventDefault();
 
-        var warehouseid = $('#warehouseid').val();
-        var address = $('#address').val();
-        var warehousename = $('#warehousename').val();
-        var warehousecity = $('#warehousecity').val();
+        var warehouseid = encodeURIComponent($('#warehouseid').val());
+        var address = encodeURIComponent($('#addressTA').val());
+        var warehousename = encodeURIComponent($('#warehousename').val());
+        var warehousecity = encodeURIComponent($('#warehousecity').val());
 
         $.ajax({
             type: 'post',
@@ -265,7 +265,7 @@ include_once('../conn.php');
     <script>
     function ResetForm() {
         // $('#warehouseid').val('');
-        $('#address').val('');
+        $('#addressTA').val('');
         $('#warehousename').val('');
         $('#warehousecity').val('');
 
@@ -305,7 +305,7 @@ include_once('../conn.php');
 
         $("#warehouseid").val(id);
         $("#warehousename").val($("#" + id).data('name'));
-        $("#address").val($("#" + id).data('address'));
+        $("#addressTA").val($("#" + id).data('address'));
         $("#warehousecity").val($("#" + id).data('city'));
     }
 
@@ -328,7 +328,6 @@ include_once('../conn.php');
             });
         }
     })
-    // Delete functionality end
 
     </script>
     <!-- Selected Row Delete Without Refreshing Page end -->
