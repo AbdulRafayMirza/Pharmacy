@@ -100,7 +100,7 @@ include_once('../conn.php');
                                             <button type="button" disabled id="delbtn"
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-trash"></i>&emsp;Delete</button>
-                                            <button type="submit" disabled id="updbtn"
+                                            <button type="button" disabled id="updbtn"
                                                 class="btn btn-primary px-5 py-2 mr-2"><i
                                                     class="fas fa-edit"></i>&emsp;Update</button>
                                             <button type="submit" id="savebtn" class="btn btn-primary px-5 py-2 mr-2"><i
@@ -309,7 +309,7 @@ include_once('../conn.php');
         $("#warehousecity").val($("#" + id).data('city'));
     }
 
-
+    // Delete functionality start
     $('#delbtn').click(function() {
         var r = confirm("Are you sure you want to delete this warehouse - " + $("#" + selectedId).data('name') + "?");
         if (r == true) {
@@ -319,6 +319,7 @@ include_once('../conn.php');
                 data: 'tableName=' + 'warehouses' + "&columnName=" + 'WarehouseId' + "&dataId=" + selectedId,
                 success: function(response) {
                     // console.log(response);
+                    
                     ResetForm();
                     getMaxId();
                     fetch_table_data();
@@ -327,6 +328,16 @@ include_once('../conn.php');
             });
         }
     })
+    // Delete functionality end
+
+    $('#updbtn').click(function(){
+        $.ajax({
+            type: 'post',
+            url : 'warehousesubmit.php',
+            data : ''
+        })
+    })
+
     </script>
     <!-- Row Update & Delete Without Refreshing Page end -->
 
