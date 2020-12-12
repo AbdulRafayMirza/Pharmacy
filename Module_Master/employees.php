@@ -416,7 +416,7 @@
             $("#gender").val($("#" + id).data('gender'));
             $("#status").val($("#" + id).data('status'));
             $("#bloodgroup").val($("#" + id).data('blood-group'));
-            $("#address").html($("#" + id).data('address'));
+            $("#address").val($("#" + id).data('address'));
             $("#designation").val($("#" + id).data('designation'));
             $("#salary").val($("#" + id).data('salary'));
             $("#officialcontact").val($("#" + id).data('official-contact'));
